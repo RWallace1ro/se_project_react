@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-// import App from "./App";
+// import App from "./App/App.js";
+// import App from "./components/App/App.js";
 import App from "./App/App";
-import ItemCard from "ItemCard/ItemCard";
 import reportWebVitals from "./reportWebVitals";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
