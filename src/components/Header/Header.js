@@ -1,19 +1,21 @@
 import "./Header.css";
 
-const Header = () => {
+const Header = ({ onCreateModal }) => {
   console.log("Header");
 
   return (
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src="/images/logo.svg" alt="logo" />
+          <img src={require("../images/logo.svg").default} alt="logo" />
         </div>
         <div>Date</div>
       </div>
       <div className="header__avatar-logo">
         <div>
-          <button type="text">Add New Clothes</button>
+          <button type="text" onClick={onCreateModal}>
+            Add New Clothes
+          </button>
         </div>
         <div>Terrence Tegegne</div>
         <div>
