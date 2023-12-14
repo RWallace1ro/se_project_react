@@ -1,12 +1,12 @@
-const WeatherConditions = [
+const weatherConditions = [
   { url: "images/day/sunny.svg", day: true, type: "sunny" },
   { url: "images/day/cloudy.svg", day: true, type: "cloudy" },
   { url: "images/day/rain.svg", day: true, type: "rain" },
   { url: "images/day/storm.svg", day: true, type: "storm" },
   { url: "images/day/snow.svg", day: true, type: "snow" },
   { url: "images/day/fog.svg", day: true, type: "fog" },
-  { url: "images/day/full-moon.svg", day: false, type: "full-moon" },
-  { url: "images/day/cloudy-night.svg", day: false, type: "cloudy-night" },
+  { url: "images/day/moon.svg", day: false, type: "moon" },
+  { url: "images/day/cloudy.svg", day: false, type: "cloud" },
   { url: "images/day/rain.svg", day: false, type: "rain" },
   { url: "images/day/storm.svg", day: false, type: "storm" },
   { url: "images/day/snow.svg", day: false, type: "snow" },
@@ -16,7 +16,7 @@ const WeatherConditions = [
 const WeatherCard = ({ day, type }) => {
   console.log("weather card");
 
-  const imageSrc = WeatherConditions.filter((i) => {
+  const imageSrc = weatherConditions.filter((i) => {
     console.log(i);
     return i.day === day && i.type === type;
   });
@@ -29,7 +29,7 @@ const WeatherCard = ({ day, type }) => {
   return (
     <section className="weather" id="weather">
       <div className="weather_info">65F</div>
-      <img src={imageSrcUrl} className="weather_image" />
+      <img src={imageSrcUrl} className="weather_image" alt="weather" />
     </section>
   );
 };
