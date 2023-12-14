@@ -13,9 +13,9 @@ const Header = () => {
       </div>
       <div className="header__avatar-logo">
         <div>
-          <button type="text">+Add New Clothes</button>
+          <button type="text">Add New Clothes</button>
         </div>
-        <div>Terrence Teggegne</div>
+        <div>Terrence Tegegne</div>
         <div>
           <img src="/images/avatar.svg" alt="avatar" />
         </div>
