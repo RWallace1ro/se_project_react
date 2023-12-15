@@ -1,5 +1,4 @@
 import "./Header.css";
-//import WeatherCard from "../../WeatherCard/WeatherCard";
 
 const Header = ({ onCreateModal }) => {
   return (
@@ -18,7 +17,7 @@ const Header = ({ onCreateModal }) => {
         </div>
         <div>Terrence Tegegne</div>
         <div>
-          <img src="../../images/avatar.svg" alt="avatar" />
+          <img src="./mages/avatar.svg" alt="avatar" />
         </div>
       </div>
     </header>
