@@ -6,7 +6,7 @@ import Footer from "../../footer/Footer";
 import ModalWithForm from "../../ModalWithForm/ModalWithForm";
 import { useEffect, useState } from "react";
 import ItemModal from "../../ItemModal/ItemModal";
-import { getForecastWeather, parseWeatherData } from ".util/weatherApi";
+import { getForecastWeather, parseWeatherData } from ".utils/weatherApi";
 
 function App() {
   const weatherTemp = "100°";
@@ -29,15 +29,17 @@ function App() {
 
   useEffect(() => {
     getForecastWeather().then((data) => {
-      console.log(data);
-      setTemp(weatherTemp);
+      const temperature = parseWeatherData(data);
+      setTemp(temperature);
     });
   }, []);
+
+  console.log(temp);
 
   return (
     <div>
       <Header onCreateModal={handleCreateModal} />
-      <Main weatherTemp={weatherTemp} onSelectCard={handleSelectedCard} />
+      <Main weatherTemp={temp} onSelectCard={handleSelectedCard} />
       <Footer />
       {activeModal === "create" && (
         <ModalWithForm title="New Garment" onClose={handleCloseModal}>
