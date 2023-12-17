@@ -37,7 +37,7 @@ const weatherConditions = [
   { url: require("../images/night/fog.svg").default, day: false, type: "fog" },
 ];
 
-const WeatherCard = ({ day = true, type = "sunny", weatherTemp = 0 }) => {
+const WeatherCard = ({ day, type, weatherTemp = 0 }) => {
   const imageSrc = weatherConditions.filter((i) => {
     return i.day === day && i.type === type;
   });
