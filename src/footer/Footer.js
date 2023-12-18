@@ -1,6 +1,4 @@
 const Footer = () => {
-  console.log("footer");
-
   return (
     <footer className="footer">
       <div>Developed by Rochelle Wallace</div>

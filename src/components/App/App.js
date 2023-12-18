@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import "./App.css";
 import Header from "../Header/Header";
 import Main from "../../Main/Main";
@@ -6,10 +5,10 @@ import Footer from "../../footer/Footer";
 import ModalWithForm from "../../ModalWithForm/ModalWithForm";
 import { useEffect, useState } from "react";
 import ItemModal from "../../ItemModal/ItemModal";
-import { getForecastWeather, parseWeatherData } from ".utils/weatherApi";
+import { getForecastWeather, parseWeatherData } from "../../utils/weatherApi";
 
 function App() {
-  const weatherTemp = "100°";
+  //const weatherTemp = "100; F";
   const [activeModal, setActiveModal] = useState("");
   const [selectedCard, setSelectedCard] = useState({});
   const [temp, setTemp] = useState(0);
@@ -33,8 +32,6 @@ function App() {
       setTemp(temperature);
     });
   }, []);
-
-  console.log(temp);
 
   return (
     <div>
