@@ -1,4 +1,10 @@
 .modal {
+  font-family: "Cabinet Grotesk", "Ariel", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700px;
+  line-height: 20px;
+  color: #000;
   position: fixed;
   top: 0;
   right: 0;
@@ -7,13 +13,49 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #000;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal__content {
-  background-color: white;
+  background: #fff;
+  position: relative;
   max-width: 496px;
+  /* min-width: 496px; */
   width: 100%;
   border-radius: 20px;
-  padding: 34px 34px;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 28px, 28px, 28px, 28px;
 }
+
+.modal__close-button {
+  position: absolute;
+  border: none;
+  width: 16px;
+  height: 16px;
+  color: #000;
+  background-color: transparent;
+  bottom: calc(100% - 50px);
+  left: calc(100% - 50px);
+  background-image: url("../images/close-button.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.modal__add-garment {
+  font-family: "Cabinet Grotesk", "Ariel", "sans-serif";
+  font-weight: 700;
+  font-size: 16px;
+  width: 124px;
+  height: 36px;
+  gap: 8px;
+  border-radius: 4px;
+  padding: 8px, 16px, 8px, 16px;
+  border: none;
+  /* color: hex(0, 0, 0, 0.3); */
+  color: #fff;
+}
+
+/* .modal__add-garment-name {
+  color: #fff;
+} */
