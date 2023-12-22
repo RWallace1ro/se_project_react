@@ -1,3 +1,4 @@
+import React from "react";
 import "./ModalWithForm.css";
 
 const ModalWithForm = ({
@@ -6,20 +7,26 @@ const ModalWithForm = ({
   title,
   onClose,
   name,
+  setActiveModal,
 }) => {
   console.log("ModalWithForm");
   return (
-    <div className={`modal modal_type_${name}`}>
+    <div
+      onClick={() => {
+        setActiveModal("");
+      }}
+      className={`modal modal_type_${name}`}
+    >
       <div className="modal__content">
         <button
           className="modal__close-button"
           type="button"
           onClick={onClose}
         ></button>
-        <h3>{title}</h3>
-        <form>
+        <h3 className="modal__title">{title}</h3>
+        <form className="modal__add-form">
           {children}
-          <button className="modal__add-garment" type="submit">
+          <button className="modal__add-form_buttom" type="submit">
             {buttonText}
           </button>
         </form>
