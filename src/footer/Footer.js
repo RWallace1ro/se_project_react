@@ -1,8 +1,10 @@
+import "./Footer.css";
+
 const Footer = () => {
   return (
     <footer className="footer">
-      <div>Developed by Rochelle Wallace</div>
-      <div>2023</div>
+      <div className="footer__caption">Developed by Rochelle Wallace</div>
+      <div className="footer__year">2023</div>
     </footer>
   );
 };

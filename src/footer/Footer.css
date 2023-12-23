@@ -1,0 +1,23 @@
+.footer {
+  display: flex;
+  margin-top: 100px;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footer__caption {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  width: 100%;
+}
+
+.footer__year {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+}
