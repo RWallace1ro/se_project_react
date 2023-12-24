@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5df1a6d4.css",
+    "main.js": "/static/js/main.812f4e7e.js",
+    "static/js/787.aec36e2a.chunk.js": "/static/js/787.aec36e2a.chunk.js",
+    "static/media/avatar.svg": "/static/media/avatar.6e2f1ee5bdedf2b39209c0c0c8c62986.svg",
+    "static/media/snow.svg": "/static/media/snow.a5bb7441280cef64ae081acadb7d6e66.svg",
+    "static/media/storm.svg": "/static/media/storm.b98983c750d3f283a9267efc3c3fd940.svg",
+    "static/media/rain.svg": "/static/media/rain.ebe0301b9856c6c8564df5c8beea1ac8.svg",
+    "static/media/fog.svg": "/static/media/fog.cee462810b2a7c8696b7701170241a66.svg",
+    "static/media/logo.svg": "/static/media/logo.2e52a3b54443b649938df0a9b3d231e2.svg",
+    "static/media/cloudy-night.svg": "/static/media/cloudy-night.c52565b10982a97a5a67275442bd12ee.svg",
+    "static/media/cloudy.svg": "/static/media/cloudy.afb98af2bd43d3a2a330e655695bd2c9.svg",
+    "static/media/close-button.svg": "/static/media/close-button.5041c8cbf1275be14ac1.svg",
+    "index.html": "/index.html",
+    "static/media/full-moon.svg": "/static/media/full-moon.ae0e6bbe1e0bfc883f3ba207396bf3b4.svg",
+    "static/media/sunny.svg": "/static/media/sunny.1c3ffd02d92146a2673939be89b88d54.svg",
+    "main.5df1a6d4.css.map": "/static/css/main.5df1a6d4.css.map",
+    "main.812f4e7e.js.map": "/static/js/main.812f4e7e.js.map",
+    "787.aec36e2a.chunk.js.map": "/static/js/787.aec36e2a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5df1a6d4.css",
+    "static/js/main.812f4e7e.js"
+  ]
+}
