@@ -1,7 +1,7 @@
 .card {
+  position: relative;
   width: 325px;
   height: 328px;
-  left: 38px;
   text-align: center;
   border: rgba(0, 0, 0, 0.3);
 }
@@ -23,8 +23,9 @@
   height: 20px;
   color: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
-  margin-bottom: -20px;
   z-index: 20;
+  margin-top: 20px;
+  position: absolute;
 }
 
 .card_image {

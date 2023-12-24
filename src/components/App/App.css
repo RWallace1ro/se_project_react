@@ -3,7 +3,12 @@
 }
 
 .card_section {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
   margin-top: 20px;
+  line-height: 25px;
 }
 
 .card_items {
@@ -19,11 +24,14 @@
 }
 
 .weather_info {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 40px;
   position: absolute;
   top: 12px;
   left: 16px;
   color: white;
-  font-size: 36px;
 }
 
 .weather_image {
