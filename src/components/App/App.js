@@ -58,7 +58,7 @@ function App() {
           setActiveModal={setActiveModal}
           // onKeyDown={handleEscapeClose}
         >
-          <div className="" modal__text-content>
+          <div className="modal__text-content">
             <label className="modal__label">
               <p className="modal__text">Name</p>
               <input
@@ -66,8 +66,8 @@ function App() {
                 type="text"
                 name="name"
                 placeholder="Name"
-                minLenght="2"
-                maxLenght="30"
+                minlenght="2"
+                maxlenght="30"
               />
             </label>
             <label className="modal__label">
@@ -77,8 +77,8 @@ function App() {
                 type="url"
                 name="link"
                 placeholder="Image URL"
-                minLenght="1"
-                maxLenght="30"
+                minlenght="1"
+                maxlenght="30"
               />
             </label>
             <p className="modal__text">Select the weather type:</p>

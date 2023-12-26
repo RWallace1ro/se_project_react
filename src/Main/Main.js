@@ -21,9 +21,14 @@ function Main({ weatherTemp, onSelectCard }) {
   return (
     <main className="main">
       <WeatherCard day={false} type="cloudy-night" weatherTemp={weatherTemp} />
-      <section className="card_section" id="card-section">
-        Today is {weatherTemp}&deg; F/You may want to wear:
-        <div className="card_items">
+      <section className="card__section" id="card-section">
+        Today is {weatherTemp}&deg; F / You may want to wear:
+        <div className="card__items">
+          {/* <ul>
+            {defaultClothingItems.map((item) => (
+              <li key={item._id}>{item.name}</li>
+            ))}
+          </ul> */}
           {filteredCards.map((item) => (
             <ItemCard item={item} onSelectCard={onSelectCard} />
           ))}
