@@ -7,16 +7,9 @@ const ModalWithForm = ({
   title,
   onClose,
   name,
-  setActiveModal,
 }) => {
-  console.log("ModalWithForm");
   return (
-    <div
-      onClick={() => {
-        setActiveModal("");
-      }}
-      className={`modal modal_type_${name}`}
-    >
+    <div onClick={handleOverlayClick} className={`modal modal_type_${name}`}>
       <div className="modal__content">
         <button
           className="modal__close-button"
@@ -34,5 +27,10 @@ const ModalWithForm = ({
     </div>
   );
 };
+
+function handleOverlayClick(e) {
+  if (e.target === e.currentTarget) {
+  }
+}
 
 export default ModalWithForm;

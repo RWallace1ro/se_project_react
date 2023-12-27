@@ -56,7 +56,6 @@ function App() {
           title="New garment"
           onClose={handleCloseModal}
           setActiveModal={setActiveModal}
-          // onKeyDown={handleEscapeClose}
         >
           <div className="modal__text-content">
             <label className="modal__label">
