@@ -1,4 +1,9 @@
 .header {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,4 +21,14 @@
   display: flex;
   gap: 20px;
   align-items: center;
+}
+
+.add__clothes {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  background-color: #fff;
 }
