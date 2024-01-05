@@ -1,11 +1,12 @@
 import "./Header.css";
+import logo from "../../images/logo.svg";
 
 const Header = ({ onCreateModal }) => {
   return (
     <header className="header">
       <div className="header__logo">
         <div>
-          <img src={require("../../images/logo.svg").default} alt="logo" />
+          <img src={logo} alt="logo" />
         </div>
         <div>December 19, VA</div>
       </div>

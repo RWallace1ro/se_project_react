@@ -27,10 +27,14 @@ function App() {
   };
 
   useEffect(() => {
-    getForecastWeather().then((data) => {
-      const temperature = parseWeatherData(data);
-      setTemp(temperature);
-    });
+    getForecastWeather()
+      .then((data) => {
+        const temperature = parseWeatherData(data);
+        setTemp(temperature);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }, []);
 
   useEffect(() => {
@@ -83,32 +87,40 @@ function App() {
             <p className="modal__text">Select the weather type:</p>
             <div>
               <div>
-                <input
-                  className="modal__radio-button"
-                  type="radio"
-                  id="hot"
-                  value="hot"
-                />
-                <label className="modal__temp-label">Hot</label>
+                <label className="modal__temp-label">
+                  <input
+                    className="modal__radio-button"
+                    type="radio"
+                    id="hot"
+                    name="temperature"
+                    value="hot"
+                  />
+                  Hot
+                </label>
               </div>
               <div>
-                <input
-                  className="modal__radio-button"
-                  type="radio"
-                  id="warm"
-                  value="warm"
-                />
-                <label className="modal__temp-label">Warm</label>
+                <label className="modal__temp-label">
+                  <input
+                    className="modal__radio-button"
+                    type="radio"
+                    id="warm"
+                    name="temperature"
+                    value="warm"
+                  />
+                  Warm
+                </label>
               </div>
               <div>
-                <input
-                  className="modal__radio-button"
-                  type="radio"
-                  id="cold"
-                  value="cold"
-                />
-
-                <label className="modal__temp-label">Cold</label>
+                <label className="modal__temp-label">
+                  <input
+                    className="modal__radio-button"
+                    type="radio"
+                    id="cold"
+                    name="temperature"
+                    value="cold"
+                  />
+                  Cold
+                </label>
               </div>
             </div>
           </div>
