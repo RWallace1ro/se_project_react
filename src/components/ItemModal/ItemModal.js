@@ -10,7 +10,7 @@ const ItemModal = ({ selectedCard, onClose }) => {
 
         <img
           src={selectedCard.link}
-          alt="clothing"
+          alt={selectedCard.name}
           className="modal__popup-image"
         />
 

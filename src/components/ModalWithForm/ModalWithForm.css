@@ -31,7 +31,7 @@
   background-color: transparent;
   bottom: calc(100% - 50px);
   left: calc(100% - 50px);
-  background-image: url("../images/close-button.svg");
+  background-image: url("../../images/close-button.svg");
   background-repeat: no-repeat;
   background-size: contain;
 }

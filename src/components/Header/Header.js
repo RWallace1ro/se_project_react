@@ -1,5 +1,6 @@
 import "./Header.css";
 import logo from "../../images/logo.svg";
+import avatar from "../../images/avatar.svg";
 
 const Header = ({ onCreateModal }) => {
   return (
@@ -18,7 +19,7 @@ const Header = ({ onCreateModal }) => {
         </div>
         <div>Terrence Tegegne</div>
         <div>
-          <img src={require("../../images/avatar.svg").default} alt="avatar" />
+          <img src={avatar} alt="avatar" />
         </div>
       </div>
     </header>
