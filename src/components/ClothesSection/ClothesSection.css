@@ -1,0 +1,39 @@
+.profile__clothes-section {
+  width: 1015px;
+  height: 676px;
+  left: 385px;
+}
+
+.profile__add-button {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  width: 88px;
+  height: 25px;
+  top: 40px;
+  left: 150px;
+  color: #000;
+  border: none;
+  background-color: #fff;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile__add-new {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  width: 88px;
+  height: 25px;
+  top: 40px;
+  left: 200px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}

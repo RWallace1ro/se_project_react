@@ -1,0 +1,33 @@
+/* .sideBar {
+  position: absolute;
+  justify-content: space-between;
+  display: flex;
+} */
+
+.profile__image {
+  width: 56px;
+  height: 56px;
+  padding-top: 119px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  border: 1px;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.profile__name {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 25px;
+  width: 157px;
+  height: 25px;
+  margin-top: -25px;
+  padding-left: 50px;
+  color: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
