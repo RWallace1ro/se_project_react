@@ -1,0 +1,18 @@
+.modal__delete-button {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  width: 101px;
+  height: 24px;
+  top: 515px;
+  left: 360px;
+  border: none;
+  color: #ff4d00;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+}

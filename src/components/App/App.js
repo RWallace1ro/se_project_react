@@ -31,12 +31,13 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem = (items) => {
-    console.log(items);
-    api
-      .addItem(items)
-      .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+  const onAddItem = (values) => {
+    console.log(values);
+    onAddItem(values)
+      .then((item) => {
+        const newItemList = Array.filter(clothingItems);
+        newItemList.push(item);
+        setClothingItems(newItemList);
         handleCloseModal();
       })
       .catch((err) => console.log(err));
@@ -47,23 +48,48 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  // const handleAddItemSubmit = (item) => {
-  //   api
-  //     .addItem(item)
-  //     .then((newItem) => {
-  //       setClothingItems([newItem, ...clothingItems]);
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
+  const handleAddItemSubmit = (item) => {
+    api
+      .addItem(item)
+      .then((newItem) => {
+        setClothingItems([newItem, ...clothingItems]);
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
+  };
 
   const handleCardDelete = (card) => {
     api
-      .removeItem(card.id)
+      .deleteItem(card.id)
       .then(() => {
         setClothingItems((cards) => cards.filter((c) => c.id !== card.id));
       })
-      .catch((err) => console.loh(err));
+      .catch((err) => console.log(err));
+  };
+
+  // const handleCardDelete = (selectedCard) => {
+  //   console.log(selectedCard);
+  //   return onDeleteItem(selectedCard._id).then(() => {
+  //     const newItemList = clothingItems.filter((item) => {
+  //       return item._id !== selectedCard._id;
+  //     });
+
+  //     setClothingItems(newItemList);
+  //   });
+  // };
+
+  const onDeleteItem = (e) => {
+    e.preventDefault();
+    onDeleteItem(selectedCard._id)
+      .then(() => {
+        const newItemList = clothingItems.filter((item) => {
+          return item._id !== selectedCard._id;
+        });
+
+        setClothingItems(newItemList);
+        handleCloseModal();
+      })
+      .catch((err) => console.log(err));
   };
 
   useEffect(() => {
@@ -119,10 +145,10 @@ function App() {
           </Route>
           <Route exact path="/profile">
             <Profile
-              // cards={clothingItems}
               clothingItems={clothingItems}
               onSelectCard={handleSelectedCard}
               onCardDelete={handleCardDelete}
+              onCreate={handleCreateModal}
               // onAddNewItem={() => setActiveModal("create")}
             />
           </Route>
@@ -133,10 +159,21 @@ function App() {
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={onAddItem}
+            handleAddItemSubmit={handleAddItemSubmit}
           />
         )}
         {activeModal === "preview" && (
-          <ItemModal selectedCard={selectedCard} onClose={handleCloseModal} />
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={handleCloseModal}
+            onClick={handleCardDelete}
+          />
+        )}
+        {activeModal === "delete" && (
+          <deleteItems
+            onClose={handleCloseModal}
+            deleteCard={handleCardDelete}
+          />
         )}
       </CurrentTemperatureUnitContext.Provider>
     </div>

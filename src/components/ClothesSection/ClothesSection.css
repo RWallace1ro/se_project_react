@@ -6,14 +6,14 @@
 
 .profile__add-button {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
-  line-height: 24px;
+  line-height: 25px;
   width: 88px;
   height: 25px;
-  top: 40px;
-  left: 150px;
+  top: 2px;
+  left: 100px;
   color: #000;
   border: none;
   background-color: #fff;
@@ -21,19 +21,26 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-right: 0px;
 }
 
 .profile__add-new {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 25px;
   width: 88px;
   height: 25px;
-  top: 40px;
-  left: 200px;
+  top: 73px;
+  left: 250px;
   position: absolute;
   display: flex;
   align-items: center;
+  justify-content: center;
+  margin-bottom: 0px;
 }
+
+/* .profile__text {
+  top: 50px;
+} */

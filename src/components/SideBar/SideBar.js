@@ -1,7 +1,8 @@
+import React from "react";
 import profileAvatar from "../../images/profileAvatar.svg";
 import "./SideBar.css";
 
-const SideBar = ({ onselectedCard }) => {
+const SideBar = ({ profileName }) => {
   return (
     <div className="sidebar">
       <div className="profile__info">
@@ -11,7 +12,7 @@ const SideBar = ({ onselectedCard }) => {
           alt="Profile-avatar"
         />
         <div>
-          <p className="profile__name">Terrence Tegegne</p>
+          <p className="profile__name">{profileName}</p>
         </div>
       </div>
     </div>

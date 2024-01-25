@@ -18,16 +18,18 @@
 
 .profile__name {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
-  font-size: 20px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 700;
   line-height: 25px;
   width: 157px;
   height: 25px;
-  margin-top: -25px;
-  padding-left: 50px;
+  top: 5px;
+  left: 75px;
   color: #000;
-  position: relative;
+  position: absolute;
   display: flex;
   align-items: center;
+  justify-content: center;
+  display: inline-block;
 }
