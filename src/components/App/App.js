@@ -31,9 +31,10 @@ function App() {
     setSelectedCard(card);
   };
 
-  const onAddItem = (values) => {
+  const addItem = (values) => {
     console.log(values);
-    onAddItem(values)
+    api
+      .addItem(values)
       .then((item) => {
         const newItemList = Array.filter(clothingItems);
         newItemList.push(item);
@@ -158,7 +159,7 @@ function App() {
           <AddItemModal
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
-            onAddItem={onAddItem}
+            onAddItem={addItem}
             handleAddItemSubmit={handleAddItemSubmit}
           />
         )}
@@ -166,7 +167,7 @@ function App() {
           <ItemModal
             selectedCard={selectedCard}
             onClose={handleCloseModal}
-            onClick={handleCardDelete}
+            handleCardDelete={handleCardDelete}
           />
         )}
         {activeModal === "delete" && (
