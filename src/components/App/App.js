@@ -79,9 +79,9 @@ function App() {
   //   });
   // };
 
-  const onDeleteItem = (e) => {
+  const deleteItem = (e) => {
     e.preventDefault();
-    onDeleteItem(selectedCard._id)
+    deleteItem(selectedCard._id)
       .then(() => {
         const newItemList = clothingItems.filter((item) => {
           return item._id !== selectedCard._id;
@@ -142,6 +142,7 @@ function App() {
               cards={clothingItems}
               onSelectCard={handleSelectedCard}
               onCardDelete={handleCardDelete}
+              clothingItems={clothingItems}
             />
           </Route>
           <Route exact path="/profile">
@@ -171,9 +172,10 @@ function App() {
           />
         )}
         {activeModal === "delete" && (
-          <deleteItems
+          <deleteItem
             onClose={handleCloseModal}
             deleteCard={handleCardDelete}
+            deleteItem={deleteItem}
           />
         )}
       </CurrentTemperatureUnitContext.Provider>
