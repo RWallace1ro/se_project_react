@@ -1,7 +1,15 @@
+/* .profile__items {
+  margin: 0;
+} */
+
 .profile__clothes-section {
   width: 1015px;
   height: 676px;
-  left: 385px;
+  left: 250px;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .profile__add-button {
@@ -40,7 +48,3 @@
   justify-content: center;
   margin-bottom: 0px;
 }
-
-/* .profile__text {
-  top: 50px;
-} */

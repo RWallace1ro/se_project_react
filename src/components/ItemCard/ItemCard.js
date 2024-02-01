@@ -7,10 +7,11 @@ const ItemCard = ({ item, onSelectCard }) => {
         <p className="card__name name_frame">{item.name}</p>
         <div>
           <img
-            src={item.link}
+            src={item.imageUrl}
             className="card_image"
             alt={item.name}
-            onClick={() => onSelectCard(item)}
+            onclick={onSelectCard}
+            // onClick={() => onSelectCard(item)}
           />
         </div>
       </div>

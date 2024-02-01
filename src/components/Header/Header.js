@@ -13,12 +13,18 @@ const Header = ({ onCreateModal }) => {
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div>January 16, VA</div>
+        <div>January 31, VA</div>
       </div>
       <div className="header__avatar-logo">
         <ToggleSwitch />
         <div>
-          <button type="text" className="add__clothes" onClick={onCreateModal}>
+          <button
+            type="text"
+            className="add__clothes"
+            onClick={() => {
+              onCreateModal();
+            }}
+          >
             +Add clothes
           </button>
         </div>

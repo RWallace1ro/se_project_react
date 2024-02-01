@@ -3,6 +3,7 @@
   margin-top: 100px;
   justify-content: space-between;
   padding: 0 20px;
+  /* position: relative; */
 }
 
 .footer__caption {
@@ -12,6 +13,8 @@
   font-weight: 500;
   line-height: 20px;
   width: 100%;
+  /* margin-top: 923px; */
+  /* position: absolute; */
 }
 
 .footer__year {
@@ -20,4 +23,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: 20px;
+  /* margin-top: 923px; */
+  /* position: absolute; */
 }

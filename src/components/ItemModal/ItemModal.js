@@ -2,6 +2,9 @@ import React from "react";
 import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, handleCardDelete }) => {
+  const handleDeleteClick = () => {
+    handleCardDelete(selectedCard);
+  };
   return (
     <div className={`modal`}>
       <div className="modal__content">
@@ -12,7 +15,7 @@ const ItemModal = ({ selectedCard, onClose, handleCardDelete }) => {
         ></button>
 
         <img
-          src={selectedCard.link}
+          src={selectedCard.imageUrl}
           alt={selectedCard.name}
           className="modal__popup-image"
         />
@@ -22,7 +25,9 @@ const ItemModal = ({ selectedCard, onClose, handleCardDelete }) => {
         <button
           className="modal__delete-button"
           type="buttom"
-          onClick={handleCardDelete}
+          onClick={handleDeleteClick}
+          // onClick={handleCardDelete}
+          // onClick={() => handleCardDelete(selectedCard)}
         >
           Delete Item
         </button>
