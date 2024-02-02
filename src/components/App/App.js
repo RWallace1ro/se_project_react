@@ -46,15 +46,15 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  const handleAddItemSubmit = (item) => {
-    api
-      .addItem(item)
-      .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
-        handleCloseModal();
-      })
-      .catch((err) => console.log(err));
-  };
+  // const handleAddItemSubmit = (item) => {
+  //   api
+  //     .addItem(item)
+  //     .then((newItem) => {
+  //       setClothingItems([newItem, ...clothingItems]);
+  //       handleCloseModal();
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   const handleCardDelete = (selectedCard) => {
     api
@@ -162,7 +162,7 @@ function App() {
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={addItem}
-            handleAddItemSubmit={handleAddItemSubmit}
+            // handleAddItemSubmit={handleAddItemSubmit}
           />
         )}
         {activeModal === "preview" && (
