@@ -4,7 +4,6 @@ import "../ClothesSection/ClothesSection.css";
 const ClothesSection = ({ onSelectCard, clothingItems, onCreateModal }) => {
   return (
     <div className="profile__items">
-      {/* <div className="profile__add-clothes" type="text"> */}
       <div className="profile__add-new" type="text">
         <p>Your items</p>
         <div className="profile__new-clothes" type="text">
@@ -23,7 +22,6 @@ const ClothesSection = ({ onSelectCard, clothingItems, onCreateModal }) => {
         ))}
       </div>
     </div>
-    // </div>
   );
 };
 

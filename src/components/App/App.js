@@ -46,16 +46,6 @@ function App() {
     if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
-  // const handleAddItemSubmit = (item) => {
-  //   api
-  //     .addItem(item)
-  //     .then((newItem) => {
-  //       setClothingItems([newItem, ...clothingItems]);
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   const handleCardDelete = (selectedCard) => {
     api
       .deleteItem(selectedCard._id)
@@ -162,7 +152,6 @@ function App() {
             handleCloseModal={handleCloseModal}
             isOpen={activeModal === "create"}
             onAddItem={addItem}
-            // handleAddItemSubmit={handleAddItemSubmit}
           />
         )}
         {activeModal === "preview" && (
@@ -170,6 +159,7 @@ function App() {
             selectedCard={selectedCard}
             onClose={handleCloseModal}
             handleCardDelete={handleCardDelete}
+            onClick={handleCardDelete}
           />
         )}
         {/* {activeModal === "delete" && (
@@ -178,8 +168,8 @@ function App() {
             deleteCard={handleCardDelete}
             // deleteItem={deleteItem}
             onCardDelete={handleDeleteItem}
-          /> */}
-        {/* )} */}
+          />
+        )} */}
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );

@@ -27,6 +27,7 @@ const addItem = ({ name, weather, imageUrl }) => {
 };
 
 const deleteItem = (_id) => {
+  debugger;
   return fetch(`${BASE_URL}/items/${_id}`, {
     method: "DELETE",
     headers: {
