@@ -7,8 +7,7 @@ const ClothesSection = ({ onSelectCard, clothingItems, onCreateModal }) => {
     <div className="profile__items">
       <div className="profile__your-items" type="text">
         <p>Your items</p>
-        <div className="profile__new-clothes" type="text"></div>
-        <div>
+        <div className="profile__new-clothes" type="text">
           <button
             type="text"
             className="profile__add-button"

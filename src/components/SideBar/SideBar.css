@@ -1,10 +1,19 @@
-.sideBar {
-  width: 100%;
+/* .sideBar {
+  display: flex;
+  gap: 20px; */
+/* width: 100%;
   left: 40px;
   justify-content: space-between;
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 20px; */
+/* } */
+
+.profile__info {
+  display: flex;
+  width: 100%;
+  /* gap: 20px; */
 }
 
 .profile__image {
@@ -14,7 +23,6 @@
   margin-bottom: 40px;
   margin-left: 40px;
   border: 1px;
-  position: relative;
   display: flex;
   align-items: center;
 }
@@ -25,9 +33,7 @@
   font-style: normal;
   font-weight: 700;
   width: 100%;
-  left: 112px;
   color: #000;
-  position: relative;
   margin: 0px;
   align-items: center;
   justify-content: center;

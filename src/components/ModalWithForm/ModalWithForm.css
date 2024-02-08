@@ -47,11 +47,17 @@
   border-radius: 4px;
   padding: 8px, 16px, 8px, 16px;
   border: none;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: #000;
   color: #fff;
   margin-top: 30px;
   margin-left: 20px;
   margin-bottom: 40px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.modal__add-form_buttom:hover {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 .modal__temp-label {

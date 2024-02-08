@@ -1,33 +1,13 @@
-/* .profile {
-  width: 229px;
-  height: 56px;
-  margin-left: 40px;
-  padding-top: 50px;
-  align-items: flex-start;
-  flex-direction: column;
-  display: flex;
-  position: absolute;
-}
-
-.profile__sidebar {
-  position: relative;
-} */
-
-/* .profile__clothes {
-
-} */
-
-.profile__sidebar {
-  width: 229px;
-  height: 56px;
-  margin-left: 40px;
-  padding-top: 50px;
-  align-items: flex-start;
-  flex-direction: column;
-  display: flex;
-  /* position: absolute; */
-}
-
 .profile {
   position: relative;
+  display: flex;
+  padding-top: 40px;
+}
+
+.profile__sidebar {
+  width: 229px;
+  height: 56px;
+  margin-left: 40px;
+  align-items: flex-start;
+  display: flex;
 }
