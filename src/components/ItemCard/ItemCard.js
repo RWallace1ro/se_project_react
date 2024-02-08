@@ -1,6 +1,10 @@
 import "./ItemCard.css";
 
 const ItemCard = ({ item, onSelectCard }) => {
+  const onCardClick = () => {
+    onSelectCard(item);
+  };
+
   return (
     <div className="card">
       <div className="card__content">
@@ -10,7 +14,7 @@ const ItemCard = ({ item, onSelectCard }) => {
             src={item.imageUrl}
             className="card_image"
             alt={item.name}
-            onClick={onSelectCard}
+            onClick={onCardClick}
           />
         </div>
       </div>

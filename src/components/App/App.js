@@ -141,7 +141,7 @@ function App() {
               clothingItems={clothingItems}
               onSelectCard={handleSelectedCard}
               onCardDelete={handleCardDelete}
-              onCreate={handleCreateModal}
+              onCreateModal={handleCreateModal}
               // onAddNewItem={() => setActiveModal("create")}
             />
           </Route>

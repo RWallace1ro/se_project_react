@@ -13,7 +13,7 @@ const Header = ({ onCreateModal }) => {
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div>January 31, VA</div>
+        <div>Febuary 6, VA</div>
       </div>
       <div className="header__avatar-logo">
         <ToggleSwitch />

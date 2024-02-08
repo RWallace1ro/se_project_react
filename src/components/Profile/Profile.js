@@ -9,26 +9,23 @@ const Profile = ({
   onAddNewItem,
   clothingItems,
   onCreateModal,
+  cards,
 }) => {
-  // const profileAvatar = "../images/profileAvatar.svg";
   const profileName = "Terrence Tegegne";
 
   return (
     <div className="profile">
       <section className="profile__sidebar">
-        <SideBar
-          // profileAvatar={profileAvatar}
-          profileName={profileName}
-        />
+        <SideBar profileName={profileName} />
       </section>
       <section className="profile__clothes">
         <ClothesSection
-          // sectionData={cards}
+          sectionData={cards}
           onAddNewItem={onAddNewItem}
           onSelectedCard={onSelectedCard}
           onCardDelete={onCardDelete}
           clothingItems={clothingItems}
-          onClick={onCreateModal}
+          onCreateModal={onCreateModal}
         />
       </section>
     </div>

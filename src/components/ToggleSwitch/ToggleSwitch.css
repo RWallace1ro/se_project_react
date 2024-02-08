@@ -6,7 +6,6 @@
 .switch__box {
   border-radius: 25px;
   border: 2px solid #7e7e7e;
-  /* border: 2px solid #000; */
   width: 56px;
   height: 30px;
   appearance: none;
@@ -35,24 +34,27 @@
 
 .switch__temp-F {
   position: absolute;
-  top: -5px;
+  top: -8px;
   left: 41px;
-  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
 }
 
 .switch__temp-C {
   position: absolute;
-  top: -5px;
+  top: -8px;
   left: 15px;
-  color: #000;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
 }
 
 .switch__active {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
   font-size: 14px;
+  top: -7px;
   font-style: normal;
   font-weight: 700;
-  line-height: 17px;
+  /* line-height: 17px; */
   color: #fff;
   text-align: center;
 }

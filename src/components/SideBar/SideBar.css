@@ -1,8 +1,11 @@
-/* .sideBar {
-  position: absolute;
+.sideBar {
+  width: 100%;
+  left: 40px;
   justify-content: space-between;
   display: flex;
-} */
+  align-items: center;
+  justify-content: center;
+}
 
 .profile__image {
   width: 56px;
@@ -18,18 +21,15 @@
 
 .profile__name {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
-  font-size: 16px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
-  line-height: 25px;
-  width: 157px;
-  height: 25px;
-  top: 5px;
-  left: 75px;
+  width: 100%;
+  left: 112px;
   color: #000;
-  position: absolute;
-  display: flex;
+  position: relative;
+  margin: 0px;
   align-items: center;
   justify-content: center;
-  display: inline-block;
+  display: flex;
 }
