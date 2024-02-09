@@ -28,7 +28,7 @@ const Header = ({ onCreateModal }) => {
             +Add clothes
           </button>
         </div>
-        <Link to="profile">Name</Link>
+        <Link to="/profile">Name</Link>
         <div>
           <img src={avatar} alt="avatar" />
         </div>
