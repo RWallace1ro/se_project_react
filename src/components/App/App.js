@@ -7,7 +7,7 @@ import ItemModal from "../ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
 import { Switch, Route } from "react-router-dom";
-import AddItemModal from "../../AddItemModal/AddItemModal";
+import AddItemModal from "../AddItemModal/AddItemModal";
 import api from "../../utils/api";
 import Profile from "../Profile/Profile";
 
