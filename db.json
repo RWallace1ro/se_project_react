@@ -98,7 +98,7 @@
     },
     {
       "name": "Boot",
-      "weather": "",
+      "weather": "cold",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e",
       "_id": 18
     },
@@ -107,78 +107,6 @@
       "weather": "cold",
       "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e",
       "_id": 19
-    },
-    {
-      "name": "Boot",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e",
-      "_id": 20
-    },
-    {
-      "name": "Boot",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e",
-      "_id": 21
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 22
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 23
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 24
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 25
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 26
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 27
-    },
-    {
-      "name": "",
-      "weather": "",
-      "imageUrl": "",
-      "_id": 28
-    },
-    {
-      "name": "",
-      "weather": "cold",
-      "imageUrl": "",
-      "_id": 29
-    },
-    {
-      "name": "Boot",
-      "weather": "",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e",
-      "_id": 30
-    },
-    {
-      "name": "Boot",
-      "weather": "cold",
-      "imageUrl": "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/wtwr-project/Boot.png?etag=0953a2ea59f1c6ebc832fabacdc9c70e",
-      "_id": 31
     }
   ]
 }

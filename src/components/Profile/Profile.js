@@ -32,12 +32,4 @@ const Profile = ({
   );
 };
 
-// const Profile = ({ onSelectedCard, onCreateModal, clothingItems }) => {
-//   return (
-//     <div className="profile">
-//       <SideBar />
-//     </div>
-//   );
-// };
-
 export default Profile;

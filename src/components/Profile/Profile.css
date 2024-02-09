@@ -1,7 +1,7 @@
 .profile {
-  position: relative;
   display: flex;
-  padding-top: 40px;
+  padding-top: 50px;
+  width: 100%;
 }
 
 .profile__sidebar {

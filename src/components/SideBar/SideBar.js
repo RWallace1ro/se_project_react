@@ -11,7 +11,6 @@ const SideBar = ({ profileName }) => {
           className="Profile__image"
           alt="Profile-avatar"
         />
-
         <p className="profile__name">{profileName}</p>
       </div>
     </div>

@@ -58,32 +58,6 @@ function App() {
       .catch((err) => console.log(err));
   };
 
-  // const handleCardDelete = (selectedCard) => {
-  //   console.log(selectedCard);
-  //   return onDeleteItem(selectedCard._id).then(() => {
-  //     const newItemList = clothingItems.filter((item) => {
-  //       return item._id !== selectedCard._id;
-  //     });
-
-  //     setClothingItems(newItemList);
-  //   });
-  // };
-
-  // const handleDeleteItem = (e) => {
-  //   e.preventDefault();
-  //   api
-  //     .deleteItem(selectedCard._id)
-  //     .then(() => {
-  //       const newItemList = clothingItems.filter((item) => {
-  //         return item._id !== selectedCard._id;
-  //       });
-
-  //       setClothingItems(newItemList);
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
-
   useEffect(() => {
     api
       .getItemList()
@@ -142,7 +116,6 @@ function App() {
               onSelectCard={handleSelectedCard}
               onCardDelete={handleCardDelete}
               onCreateModal={handleCreateModal}
-              // onAddNewItem={() => setActiveModal("create")}
             />
           </Route>
         </Switch>
@@ -162,14 +135,6 @@ function App() {
             onClick={handleCardDelete}
           />
         )}
-        {/* {activeModal === "delete" && (
-          <DeleteItem
-            onClose={handleCloseModal}
-            deleteCard={handleCardDelete}
-            // deleteItem={deleteItem}
-            onCardDelete={handleDeleteItem}
-          />
-        )} */}
       </CurrentTemperatureUnitContext.Provider>
     </div>
   );
