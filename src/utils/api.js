@@ -1,8 +1,10 @@
+import handleServerResponse from "../../utils/utils";
+
 const BASE_URL = "http://localhost:3001";
 
-const handleServerResponse = (res) => {
-  return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-};
+// const handleServerResponse = (res) => {
+//   return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+// };
 
 const getItemList = () => {
   return fetch(`${BASE_URL}/items`, {

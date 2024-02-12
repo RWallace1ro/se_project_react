@@ -21,7 +21,7 @@ const ModalWithForm = ({
         <form className="modal__add-form" onSubmit={onSubmit}>
           {children}
           <button className="modal__add-form_buttom" type="submit">
-            {buttonText}
+            {(buttonText = "Add garment")}
           </button>
         </form>
       </div>

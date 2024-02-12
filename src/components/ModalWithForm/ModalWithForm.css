@@ -36,6 +36,10 @@
   background-size: contain;
 }
 
+.modal__close-button:hover {
+  cursor: pointer;
+}
+
 .modal__add-form_buttom {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
   font-weight: 700;

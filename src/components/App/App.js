@@ -42,8 +42,9 @@ function App() {
   };
 
   const handleToggleSwitchChange = () => {
-    if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
-    if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
+    setCurrentTemperatureUnit(currentTemperatureUnit === "F" ? "C" : "F");
+    // if (currentTemperatureUnit === "C") setCurrentTemperatureUnit("F");
+    // if (currentTemperatureUnit === "F") setCurrentTemperatureUnit("C");
   };
 
   const handleCardDelete = (selectedCard) => {
@@ -51,7 +52,7 @@ function App() {
       .deleteItem(selectedCard._id)
       .then(() => {
         setClothingItems((cards) =>
-          cards.filter((c) => c._id !== selectedCard._id)
+          cards.filter((card) => card._id !== selectedCard._id)
         );
         handleCloseModal();
       })
