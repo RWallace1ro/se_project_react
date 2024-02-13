@@ -2,7 +2,7 @@ import ItemCard from "../ItemCard/ItemCard";
 import "../ClothesSection/ClothesSection.css";
 import React from "react";
 
-const ClothesSection = ({ onSelectCard, clothingItems, onCreateModal }) => {
+const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
   return (
     <div className="profile__items">
       <div className="profile__your-items" type="text">
@@ -24,7 +24,7 @@ const ClothesSection = ({ onSelectCard, clothingItems, onCreateModal }) => {
           <ItemCard
             key={item._id}
             item={item}
-            onSelectCard={onSelectCard}
+            onSelectedCard={onSelectedCard}
             onClick={clothingItems}
           />
         ))}

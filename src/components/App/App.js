@@ -106,7 +106,7 @@ function App() {
             <Main
               weatherTemp={temp}
               cards={clothingItems}
-              onSelectCard={handleSelectedCard}
+              onSelectedCard={handleSelectedCard}
               onCardDelete={handleCardDelete}
               clothingItems={clothingItems}
             />
@@ -114,7 +114,7 @@ function App() {
           <Route exact path="/profile">
             <Profile
               clothingItems={clothingItems}
-              onSelectCard={handleSelectedCard}
+              onSelectedCard={handleSelectedCard}
               onCardDelete={handleCardDelete}
               onCreateModal={handleCreateModal}
             />

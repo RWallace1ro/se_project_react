@@ -30,13 +30,13 @@ const AddItemModal = ({
     onAddItem({ name, imageUrl, weather });
   }
 
-  const [stateValue, setStateValue] = useState([]);
+  const [currentStateValue, setCurrentStateValue] = useState([]);
 
   useEffect(() => {
     if (isOpen) {
-      setStateValue(["initialValue"]);
+      setCurrentStateValue([currentStateValue]);
     }
-  }, [isOpen]);
+  }, [isOpen, currentStateValue]);
 
   return (
     <ModalWithForm
