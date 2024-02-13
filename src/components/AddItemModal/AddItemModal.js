@@ -30,13 +30,13 @@ const AddItemModal = ({
     onAddItem({ name, imageUrl, weather });
   }
 
-  const [currentStateValue, setCurrentStateValue] = useState([]);
-
   useEffect(() => {
     if (isOpen) {
-      setCurrentStateValue([currentStateValue]);
+      setName("");
+      setUrl("");
+      setWeather("");
     }
-  }, [isOpen, currentStateValue]);
+  }, [isOpen]);
 
   return (
     <ModalWithForm
@@ -45,6 +45,7 @@ const AddItemModal = ({
       isOpen={isOpen}
       onSubmit={handleSubmit}
       setActiveModal={setActiveModal}
+      buttonText="Add garment"
     >
       <div className="modal__text-content">
         <label className="modal__label">
