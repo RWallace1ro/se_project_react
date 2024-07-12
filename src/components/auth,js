@@ -1,4 +1,4 @@
-import handleServerResponse from "./utils";
+import handleServerResponse from "./utils/utils";
 
 const BASE_URL = "http://localhost:3001";
 

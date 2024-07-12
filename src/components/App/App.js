@@ -6,16 +6,16 @@ import React, { useEffect, useState } from "react";
 import ItemModal from "../ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import api from "../../utils/api";
 import Profile from "../Profile/Profile";
-import LoginModal from ".../LoginModal/LoginModal";
-import RegisterModal from ".../RegisterModal/RegisterModal";
-import { checkToken } from "../../utils/auth.js";
-// import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
+import { checkToken } from "../components/auth";
+import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
-import LoadingIndicator from "../LoadingIndicator/Loadingindicator.js";
+import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
