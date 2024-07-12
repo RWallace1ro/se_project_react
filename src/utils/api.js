@@ -33,10 +33,32 @@ const deleteItem = (_id) => {
   }).then(handleServerResponse);
 };
 
+// const createItem = (_id) => {
+//   return fetch(`${BASE_URL}/items/${_id}`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ name, avatar, email, password }),
+//   }).then(handleServerResponse);
+// };
+
+// const login = (_id) => {
+//   return fetch(`${BASE_URL}/items/${_id}`, {
+//     method: "POST",
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ email, password }),
+//   }).then(handleServerResponse);
+// };
+
 const api = {
   getItemList,
   addItem,
   deleteItem,
+  // createItem,
+  // login,
 };
 
 export default api;

@@ -1,8 +1,14 @@
 import ItemCard from "../ItemCard/ItemCard";
 import "../ClothesSection/ClothesSection.css";
-import React from "react";
+import React, { useContext } from "react";
+import CurrengtUserContext from "../../contexts/CurrentUserContext";
 
 const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
+  const currentUser = useContext(CurrengtUserContext);
+  const userClothingItems = clothingItems.filter(
+    (item) => item.owner === currentUser._id
+  );
+
   return (
     <div className="profile__items">
       <div className="profile__your-items" type="text">
