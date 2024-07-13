@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { signup } from "../../../auth,js";
+import { signup } from "../auth/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const RegisterModal = ({ handleCloseModal, isOpen }) => {

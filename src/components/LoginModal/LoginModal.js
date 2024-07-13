@@ -1,6 +1,6 @@
 import React from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { signin } from "../components/auth";
+import { signin } from "../auth/auth";
 
 const LoginModal = ({ handleCloseModal, isOpen }) => {
   const [email, setEmail] = useState("");

@@ -12,7 +12,7 @@ import api from "../../utils/api";
 import Profile from "../Profile/Profile";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import { checkToken } from "../components/auth";
+import { checkToken } from "../auth/auth";
 import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
