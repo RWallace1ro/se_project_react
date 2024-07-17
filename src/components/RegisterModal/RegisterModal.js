@@ -1,12 +1,14 @@
 import React, { useState } from "react";
-import { signup } from "../auth/auth";
+import { signup } from "../../auth/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import "./RegisterModal.css";
 
 const RegisterModal = ({ handleCloseModal, isOpen }) => {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = (e) => {
     e.prevenDefault();
@@ -24,6 +26,7 @@ const RegisterModal = ({ handleCloseModal, isOpen }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Sign Up"
+      isFormValid={isFormValid}
     >
       <label className="modal__label">
         <p className="modal__text">Email*</p>
@@ -65,7 +68,7 @@ const RegisterModal = ({ handleCloseModal, isOpen }) => {
         />
       </label>
       <label className="modal__label">
-        <p className="modal__text">Avatar URL</p>
+        <p className="modal__text">Avatar URL*</p>
         <input
           className="modal__input"
           type="URL"
@@ -76,12 +79,12 @@ const RegisterModal = ({ handleCloseModal, isOpen }) => {
           required
         />
       </label>
-      <p className="modal__switch-text">
-        or{" "}
-        <span className="modal__switch-link" onClick={handleRegister}>
+      <div className="modal__switch-container">
+        <span className="modal__switch-text">or</span>
+        <a href="#" className="modal__switch-link" onClick={handleCloseModal}>
           Log In
-        </span>
-      </p>
+        </a>
+      </div>
     </ModalWithForm>
   );
 };

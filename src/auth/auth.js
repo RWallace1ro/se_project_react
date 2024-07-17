@@ -32,4 +32,4 @@ const checkToken = (token) => {
   }).then(handleServerResponse);
 };
 
-export default { signup, signin, checkToken };
+export { signup, signin, checkToken };

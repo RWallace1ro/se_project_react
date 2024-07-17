@@ -1,12 +1,14 @@
 import { useContext, useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import CurrentUserContext from ;
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 import api from "../../utils/api";
+import "./EditProfileModal.css";
 
 const EditProfileModal = ({ handleCloseModal, isOpen }) => {
-  const currentUser = useContext(CurrengtUserContext);
+  const currentUser = useContext(CurrentUserContext);
   const [name, setName] = useState(currenUser?.name || "");
   const [avatar, setAvatar] = useState(currentUser?.avatar || "");
+  const [isFormValid, setIsFormValid] = useState(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -14,6 +16,11 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
       setAvatar(currentUser?.avatar || "");
     }
   }, [isOpen, currentUser]);
+
+  useEffect(() => {
+    const isValid = name && avatar;
+    setIsFormValid(isValid);
+  }, [name, avatar]);
 
   const handleSubmit = (e) => {
     e.prevenDefault();
@@ -33,8 +40,26 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Save"
+      isFormValid={isFormValid}
     >
-      //Remember to enter form information
+      <label classname="modal__label">
+        Name*
+        <input
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder="Name"
+          required
+        />
+      </label>
+      <label classname="modal__label">Name*</label> Avatar URL*
+      <input
+        type="url"
+        value={avatar}
+        onChange={(e) => setAvatar(e.target.value)}
+        placeholder="Avatar URL"
+        required
+      />
     </ModalWithForm>
   );
 };

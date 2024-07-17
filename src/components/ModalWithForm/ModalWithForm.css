@@ -152,3 +152,55 @@
   min-height: 498px;
   border-radius: 16px;
 }
+
+.modal__error-text {
+  color: #ff4d00;
+  text-align: center;
+}
+
+.modal__switch-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -10px;
+}
+
+.modal__switch-text {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  width: 73px;
+  height: 20px;
+  margin-top: 10px;
+  margin-right: -50px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  margin-left: 20px;
+  margin-bottom: -88px;
+}
+
+.modal__switch-link {
+  cursor: pointer;
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  width: 73px;
+  height: 20px;
+  margin-top: 40px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+  margin-top: -20px;
+  text-decoration: none;
+  margin-top: 10px;
+  margin-bottom: -88px;
+  margin-left: 20px;
+  margin-right: 255px;
+}
+
+.modal__submitbutton:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+}

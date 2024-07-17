@@ -1,9 +1,11 @@
 import React from "react";
 
-const CurrengtUserContext = React.createContext();
+const CurrentUserContext = React.createContext();
 
-<CurrentUserContext.Provider value={currentUser}>
+{
+  /* <CurrentUserContext.Provider value={currentUser}>
   <div className="page"></div>
-</CurrentUserContext.Provider>;
+</CurrentUserContext.Provider>; */
+}
 
-export default CurrengtUserContext;
+export default CurrentUserContext;

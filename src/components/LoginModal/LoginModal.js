@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import { signin } from "../auth/auth";
+import { signin } from "../../auth/auth";
+import "./LoginModal.css";
 
 const LoginModal = ({ handleCloseModal, isOpen }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [isFormValid, setIsFormValid] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
@@ -12,7 +14,7 @@ const LoginModal = ({ handleCloseModal, isOpen }) => {
     signin(email, password)
       .then((res) => {
         localStorage.setItem("jwt", res.token);
-        handleCloseModal;
+        handleCloseModal();
       })
       .catch((err) => {
         setError("Incorrect password");
@@ -27,6 +29,7 @@ const LoginModal = ({ handleCloseModal, isOpen }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Log In"
+      isFormValid={isFormValid}
     >
       <label className="modal__label">
         <p className="modal__text">Email*</p>
@@ -53,13 +56,19 @@ const LoginModal = ({ handleCloseModal, isOpen }) => {
           required
         />
       </label>
+      <div className="modal__switch-container">
+        <span className="modal__switch-text">or</span>
+        <a href="#" className="modal__switch-link" onClick={handleCloseModal}>
+          Sign Up
+        </a>
+      </div>
       {error && <p className="modal__error-text">{error}</p>}
-      <p className="modal__switch-text">
+      {/* <p className="modal__switch-text">
         or{" "}
         <span className="modal__switch-link" onClick={handleRegister}>
           Sign Up
         </span>
-      </p>
+      </p>  */}
     </ModalWithForm>
   );
 };

@@ -1,0 +1,19 @@
+.modal__label {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.modal__label input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal__submit-button:disabled {
+  background-color: rgba(0, 0, 0, 0, 0.5);
+  cursor: not-allowed;
+  color: rgba(0, 0, 0, 0, 0.5);
+}
