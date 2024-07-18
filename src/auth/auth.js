@@ -3,7 +3,7 @@ import handleServerResponse from "../utils/utils";
 const BASE_URL = "http://localhost:3001";
 
 const signup = (name, avatar, email, password) => {
-  return fetch(`${BASE_URL}/items/${_id}`, {
+  return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +13,7 @@ const signup = (name, avatar, email, password) => {
 };
 
 const signin = (email, password) => {
-  return fetch(`${BASE_URL}/items/${_id}`, {
+  return fetch(`${BASE_URL}/items`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

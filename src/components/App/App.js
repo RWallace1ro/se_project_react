@@ -188,19 +188,18 @@ function App() {
               />
             </Route>
             <Route exact path="/profile">
-              {isLoggedIn ? (
-                <Profile
-                  clothingItems={clothingItems}
-                  onSelectedCard={handleSelectedCard}
-                  onCardDelete={handleCardDelete}
-                  // onCreateModal={handleCreateModal}
-                  onCardLike={handleCardLike}
-                  onCreateModal={() => setActiveModal("create")}
-                  onSignOut={handleSignOut}
-                />
-              ) : (
-                <Redirect to="/" />
-              )}
+              {/* {isLoggedIn ? ( */}
+              <Profile
+                clothingItems={clothingItems}
+                onSelectedCard={handleSelectedCard}
+                onCardDelete={handleCardDelete}
+                // onCreateModal={handleCreateModal}
+                onCardLike={handleCardLike}
+                onCreateModal={() => setActiveModal("create")}
+                onSignOut={handleSignOut}
+              />
+              (
+              <Redirect to="/" />)
             </Route>
           </Switch>
           <Footer />
