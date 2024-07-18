@@ -13,7 +13,7 @@ import Profile from "../Profile/Profile";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import { checkToken } from "../../auth/auth";
-import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+// import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
 
@@ -24,7 +24,7 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
   const handleLogin = () => {
@@ -109,7 +109,7 @@ function App() {
 
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
-    setIsLoggedIn(false);
+    // setIsLoggedIn(false);
     setCurrentUser(null);
   };
 
@@ -119,11 +119,11 @@ function App() {
       checkToken(token)
         .then((user) => {
           setCurrentUser(user);
-          setIsLoggedIn(true);
+          // setIsLoggedIn(true);
         })
         .catch((err) => {
           console.log(err);
-          setIsLoggedIn(false);
+          // setIsLoggedIn(false);
         });
     }
   }, []);
@@ -188,7 +188,6 @@ function App() {
               />
             </Route>
             <Route exact path="/profile">
-              {/* {isLoggedIn ? ( */}
               <Profile
                 clothingItems={clothingItems}
                 onSelectedCard={handleSelectedCard}
@@ -198,8 +197,6 @@ function App() {
                 onCreateModal={() => setActiveModal("create")}
                 onSignOut={handleSignOut}
               />
-              (
-              <Redirect to="/" />)
             </Route>
           </Switch>
           <Footer />

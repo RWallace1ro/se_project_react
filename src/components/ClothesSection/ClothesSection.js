@@ -5,6 +5,10 @@ import CurrengtUserContext from "../../contexts/CurrentUserContext";
 
 const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
   const currentUser = useContext(CurrengtUserContext);
+
+  if (!currentUser) {
+    return null;
+  }
   const userClothingItems = clothingItems.filter(
     (item) => item.owner === currentUser._id
   );
@@ -26,7 +30,7 @@ const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
         </div>
       </div>
       <div className="profile__clothes-section">
-        {clothingItems.map((item) => (
+        {userClothingItems.map((item) => (
           <ItemCard
             key={item._id}
             item={item}

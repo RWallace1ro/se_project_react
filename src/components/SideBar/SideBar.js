@@ -14,7 +14,7 @@ const SideBar = ({ profileName, onSignOut }) => {
         <p className="profile__name">{profileName}</p>
       </div>
       <button type="button" className="profile__sign-out" onClick={onSignOut}>
-        Sign Out
+        Log Out
       </button>
     </div>
   );

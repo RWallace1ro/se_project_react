@@ -10,6 +10,7 @@ const Profile = ({
   onAddNewItem,
   clothingItems,
   onCreateModal,
+  onSignOut,
   cards,
 }) => {
   const currentUser = useContext(CurrengtUserContext);
@@ -21,7 +22,7 @@ const Profile = ({
       <section className="profile__sidebar">
         <SideBar profileName={profileName} />
         <button type="button" className="profile_sign-out" onClick={onSignOut}>
-          Sign Out
+          {/* Sign Out */}
         </button>
       </section>
       <section className="profile__clothes">
