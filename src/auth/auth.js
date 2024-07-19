@@ -1,9 +1,16 @@
-import handleServerResponse from "../utils/utils";
+// import handleServerResponse from "../utils/utils";
 
 const BASE_URL = "http://localhost:3001";
 
+const handleServerResponse = (res) => {
+  if (!res.ok) {
+    return res.json().then((err) => Promise.reject(err));
+  }
+  return res.json();
+};
+
 const signup = (name, avatar, email, password) => {
-  return fetch(`${BASE_URL}/items`, {
+  return fetch(`${BASE_URL}/signup`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -13,7 +20,7 @@ const signup = (name, avatar, email, password) => {
 };
 
 const signin = (email, password) => {
-  return fetch(`${BASE_URL}/items`, {
+  return fetch(`${BASE_URL}/signin`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -6,14 +6,13 @@ import React, { useEffect, useState } from "react";
 import ItemModal from "../ItemModal/ItemModal";
 import { getForecastWeather, parseWeatherData } from "../../utils/weatherApi";
 import CurrentTemperatureUnitContext from "../../contexts/CurrentTemperatureUnitContext";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, useHistory } from "react-router-dom";
 import AddItemModal from "../AddItemModal/AddItemModal";
 import api from "../../utils/api";
 import Profile from "../Profile/Profile";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import { checkToken } from "../../auth/auth";
-// import { Redirect } from "react-router-dom/cjs/react-router-dom.min";
+import { checkToken, signin, signup } from "../../auth/auth";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
 
@@ -24,15 +23,34 @@ function App() {
   const [currentTemperatureUnit, setCurrentTemperatureUnit] = useState("F");
   const [clothingItems, setClothingItems] = useState([]);
   const [currentUser, setCurrentUser] = useState(null);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const history = useHistory();
 
-  const handleLogin = () => {
-    setActiveModal("log-in");
+  const handleLogin = (email, password) => {
+    signin(email, password)
+      .then(({ token }) => {
+        localStorage.setItem("jwt", token);
+        isLoggedIn("");
+        return checkToken(token);
+      })
+      .then((user) => {
+        setCurrentUser(user);
+        setIsLoggedIn(true);
+        setActiveModal("");
+        history.push("/profile");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
-  const handleRegister = () => {
-    setActiveModal("register");
+  const handleRegister = (name, email, password, avatar) => {
+    signup(name, avatar, email, password)
+      .then(() => handleLogin(email, password))
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const closeActiveModal = () => {
@@ -109,8 +127,9 @@ function App() {
 
   const handleSignOut = () => {
     localStorage.removeItem("jwt");
-    // setIsLoggedIn(false);
+    setIsLoggedIn(false);
     setCurrentUser(null);
+    history.push("/");
   };
 
   useEffect(() => {
@@ -119,11 +138,11 @@ function App() {
       checkToken(token)
         .then((user) => {
           setCurrentUser(user);
-          // setIsLoggedIn(true);
+          setIsLoggedIn(true);
         })
         .catch((err) => {
           console.log(err);
-          // setIsLoggedIn(false);
+          setIsLoggedIn(false);
         });
     }
   }, []);
