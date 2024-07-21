@@ -46,24 +46,27 @@ function App() {
       });
   };
 
-  // const handleRegister = (name, email, password, avatar) => {
-  //   signup(name, avatar, email, password)
-  //     .then(() => handleLogin(email, password))
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   const handleRegister = (name, email, password, avatar) => {
     signup(name, avatar, email, password)
-      .then(() => {
-        setActiveModal("");
-        handleLogin(email, password);
-      })
+      .then(() => handleLogin(email, password))
+      .then(() => setActiveModal(""))
       .catch((err) => {
         console.log(err);
       });
   };
+
+  // const handleRegister = (name, email, password, avatar) => {
+  //   signup(name, avatar, email, password)
+  //     .then((user) => {
+  //       setCurrentUser(user);
+  //       setIsLoggedIn(true);
+  //       setActiveModal("");
+  //       handleLogin(email, password);
+  //     })
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
 
   const closeActiveModal = () => {
     {
