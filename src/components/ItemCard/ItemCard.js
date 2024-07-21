@@ -4,9 +4,9 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isLiked = currentUser
-    ? item.likes.some((id) => id === currentUser._id)
-    : false;
+  const isLiked = item.likes.some((id) => id === currentUser._id);
+  // ? item.likes.some((id) => id === currentUser._id)
+  // : false;
   const itemLikeButtonClassName = `item_like-button ${
     isLiked ? "item__like-button_active" : ""
   }`;
@@ -15,9 +15,9 @@ const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
     onCardLike({ id: item._id, isLiked });
   };
 
-  const onCardClick = () => {
-    onSelectedCard(item);
-  };
+  // const onCardClick = () => {
+  //   onSelectedCard(item);
+  // };
 
   console.log("Item image URL:", item.imageUrl);
 
@@ -30,7 +30,8 @@ const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
             src={item.imageUrl}
             className="card_image"
             alt={item.name}
-            onClick={onCardClick}
+            onClick={() => onSelectedCard(item)}
+            // onClick={onCardClick}
             // onClick={() => onSelectedCard}
           />
           {currentUser && (

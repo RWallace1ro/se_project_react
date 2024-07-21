@@ -31,7 +31,8 @@ function App() {
     signin(email, password)
       .then(({ token }) => {
         localStorage.setItem("jwt", token);
-        isLoggedIn("");
+        setIsLoggedIn(true);
+        // isLoggedIn("");
         return checkToken(token);
       })
       .then((user) => {
@@ -45,9 +46,20 @@ function App() {
       });
   };
 
+  // const handleRegister = (name, email, password, avatar) => {
+  //   signup(name, avatar, email, password)
+  //     .then(() => handleLogin(email, password))
+  //     .catch((err) => {
+  //       console.log(err);
+  //     });
+  // };
+
   const handleRegister = (name, email, password, avatar) => {
     signup(name, avatar, email, password)
-      .then(() => handleLogin(email, password))
+      .then(() => {
+        setActiveModal("");
+        handleLogin(email, password);
+      })
       .catch((err) => {
         console.log(err);
       });
@@ -192,7 +204,7 @@ function App() {
           {/* <Header onCreateModal={handleCreateModal} /> */}
           <Header
             onCreateModal={() => setActiveModal("create")}
-            onLogin={handleLogin}
+            onLogin={() => setActiveModal("log-in")}
             onRegister={handleRegister}
           />
           <Switch>
@@ -215,6 +227,7 @@ function App() {
                 onCardLike={handleCardLike}
                 onCreateModal={() => setActiveModal("create")}
                 onSignOut={handleSignOut}
+                isLoggedIn={isLoggedIn}
               />
             </Route>
           </Switch>

@@ -1,23 +1,27 @@
 import React, { useState } from "react";
-import { signup } from "../../auth/auth";
+// import { signup } from "../../auth/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-const RegisterModal = ({ handleCloseModal, isOpen }) => {
+const RegisterModal = ({ handleCloseModal, isOpen, onRegister }) => {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false);
+  // const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
-    signup(name, avatar, email, password)
-      .then((res) => {
-        handleCloseModal();
-      })
-      .catch((err) => console.log(err));
+    e.preventDefault();
+    onRegister(name, email, password, avatar);
   };
+  // const handleSubmit = (e) => {
+  //   e.prevenDefault();
+  //   signup(name, avatar, email, password)
+  //     .then((res) => {
+  //       handleCloseModal();
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
 
   return (
     <ModalWithForm
@@ -26,7 +30,7 @@ const RegisterModal = ({ handleCloseModal, isOpen }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Sign Up"
-      isFormValid={isFormValid}
+      // isFormValid={isFormValid}
     >
       <label className="modal__label">
         <p className="modal__text">Email*</p>
