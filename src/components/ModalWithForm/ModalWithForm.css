@@ -179,6 +179,8 @@
   color: rgba(0, 0, 0, 0.5);
   margin-left: 20px;
   margin-bottom: -88px;
+  /* border: none; */
+  background-color: #fff;
 }
 
 .modal__switch-link {
@@ -190,15 +192,16 @@
   line-height: 20px;
   width: 73px;
   height: 20px;
-  margin-top: 40px;
+  /* margin-top: 40px; */
   text-align: center;
   color: rgba(0, 0, 0, 0.5);
-  margin-top: -20px;
-  text-decoration: none;
+  /* margin-top: -20px; */
   margin-top: 10px;
   margin-bottom: -88px;
   margin-left: 20px;
   margin-right: 255px;
+  /* border: none; */
+  background-color: #fff;
 }
 
 .modal__submitbutton:disabled {

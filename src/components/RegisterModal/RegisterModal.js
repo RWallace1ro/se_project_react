@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import "./RegisterModal.css";
 
-const RegisterModal = ({ handleCloseModal, isOpen, onRegister }) => {
+const RegisterModal = ({
+  handleCloseModal,
+  isOpen,
+  onRegister,
+  onSwitchToLogin,
+}) => {
   const [name, setName] = useState("");
   const [avatar, setAvatar] = useState("");
   const [email, setEmail] = useState("");
@@ -85,12 +90,23 @@ const RegisterModal = ({ handleCloseModal, isOpen, onRegister }) => {
       </label>
       <div className="modal__switch-container">
         <span className="modal__switch-text">or</span>
-        <a href="#" className="modal__switch-link" onClick={handleCloseModal}>
+        <a href="#" className="modal__switch-link" onClick={onSwitchToLogin}>
           Log In
         </a>
+        {/* <button
+          type="button"
+          className="modal__switch-link"
+          onClick={onSwitchToLogin}
+        >
+          Log In
+        </button> */}
       </div>
     </ModalWithForm>
   );
 };
+
+{
+  /* <button type="text">Sign up</button> */
+}
 
 export default RegisterModal;

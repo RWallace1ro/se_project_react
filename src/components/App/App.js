@@ -15,6 +15,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import { checkToken, signin, signup } from "../../auth/auth";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
+// import { set } from "mongoose";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -68,19 +69,21 @@ function App() {
   //     });
   // };
 
-  const closeActiveModal = () => {
-    {
-      setActiveModal("close");
-    }
-  };
+  const closeActiveModal = () => setActiveModal("");
+
+  // const closeActiveModal = () => {
+  //   {
+  //     setActiveModal("close");
+  //   }
+  // };
 
   // const handleCreateModal = () => {
   //   setActiveModal("create");
   // };
 
-  const handleCloseModal = () => {
-    setActiveModal("");
-  };
+  // const handleCloseModal = () => {
+  //   setActiveModal("");
+  // };
 
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -94,7 +97,7 @@ function App() {
       .addItem(values, token)
       .then((item) => {
         setClothingItems([...clothingItems, item]);
-        handleCloseModal();
+        closeActiveModal();
       })
       .catch((err) => console.log(err))
       .finally(() => setIsLoading(false));
@@ -112,7 +115,7 @@ function App() {
         setClothingItems((cards) =>
           cards.filter((card) => card._id !== selectedCard._id)
         );
-        handleCloseModal();
+        closeActiveModal();
       })
       .catch((err) => console.log(err));
   };
@@ -186,7 +189,7 @@ function App() {
     if (!activeModal) return;
     const handleEscapeClose = (e) => {
       if (e.key === "Escape") {
-        handleCloseModal();
+        closeActiveModal();
       }
     };
     document.addEventListener("keydown", handleEscapeClose);
@@ -208,7 +211,7 @@ function App() {
           <Header
             onCreateModal={() => setActiveModal("create")}
             onLogin={() => setActiveModal("log-in")}
-            onRegister={handleRegister}
+            onRegister={() => setActiveModal("register")}
           />
           <Switch>
             <Route exact path="/">
@@ -246,16 +249,26 @@ function App() {
           {activeModal === "preview" && (
             <ItemModal
               selectedCard={selectedCard}
-              onClose={handleCloseModal}
+              onClose={closeActiveModal}
               handleCardDelete={handleCardDelete}
               onClick={handleCardDelete}
             />
           )}
           {activeModal === "register" && (
-            <RegisterModal handleCloseModal={handleCloseModal} isOpen />
+            <RegisterModal
+              handleCloseModal={closeActiveModal}
+              isOpen
+              onRegister={handleRegister}
+              onswitchToLogin={() => setActiveModal("login")}
+            />
           )}
           {activeModal === "log-in" && (
-            <LoginModal handleCloseModal={handleCloseModal} isOpen />
+            <LoginModal
+              handleCloseModal={closeActiveModal}
+              isOpen
+              onLogin={handleLogin}
+              onSwitchToRegister={() => setActiveModal("register")}
+            />
           )}
         </CurrentTemperatureUnitContext.Provider>
       </CurrengtUserContext.Provider>
