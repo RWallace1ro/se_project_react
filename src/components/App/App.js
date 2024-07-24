@@ -33,7 +33,6 @@ function App() {
       .then(({ token }) => {
         localStorage.setItem("jwt", token);
         setIsLoggedIn(true);
-        // isLoggedIn("");
         return checkToken(token);
       })
       .then((user) => {
@@ -50,7 +49,7 @@ function App() {
   const handleRegister = (name, email, password, avatar) => {
     signup(name, avatar, email, password)
       .then(() => handleLogin(email, password))
-      .then(() => setActiveModal(""))
+      // .then(() => setActiveModal(""))
       .catch((err) => {
         console.log(err);
       });
@@ -259,7 +258,7 @@ function App() {
               handleCloseModal={closeActiveModal}
               isOpen
               onRegister={handleRegister}
-              onswitchToLogin={() => setActiveModal("log-in")}
+              onSwitchToLogin={() => setActiveModal("log-in")}
             />
           )}
           {activeModal === "log-in" && (

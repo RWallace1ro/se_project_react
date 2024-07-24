@@ -26,5 +26,35 @@
   margin: 0px;
   align-items: center;
   display: flex;
-  justify-content: ;
+  justify-content: space-around;
+}
+
+.profile__sign-out {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  width: 100%;
+  color: #000;
+  top: 232px;
+  padding-top: 10px;
+  padding-left: 0px;
+  display: flex;
+  background-color: #fff;
+  border: none;
+}
+
+.profile__change-profile-data {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  width: 100%;
+  color: #000;
+  top: 199px;
+  padding-top: 20px;
+  padding-left: 0px;
+  display: flex;
+  background-color: #fff;
+  border: none;
 }

@@ -68,8 +68,8 @@ const LoginModal = ({ handleCloseModal, isOpen, onSwitchToRegister }) => {
           onClick={onSwitchToRegister}
         >
           Sign Up
-        </button> */}
-        {/* Sign Up */}
+        </button>
+        Sign Up */}
       </div>
       {error && <p className="modal__error-text">{error}</p>}
       {/* <p className="modal__switch-text">

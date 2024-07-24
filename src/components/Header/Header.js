@@ -9,6 +9,7 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 const Header = ({ onCreateModal, onLogin, onRegister }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLoggedIn = !!currentUser;
+  console.log("Logged In");
   const userInitial =
     isLoggedIn && currentUser.name ? currentUser.name[0].toUpperCase() : "";
 
@@ -20,7 +21,7 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div>Febuary 6, VA</div>
+        <div>July 24, VA</div>
       </div>
       <div className="header__avatar-logo">
         <ToggleSwitch />
