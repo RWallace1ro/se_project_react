@@ -73,7 +73,7 @@ function App() {
 
   // const closeActiveModal = () => {
   //   {
-  //     setActiveModal("close");
+  //     setActiveModal("");
   //   }
   // };
 
@@ -259,7 +259,7 @@ function App() {
               handleCloseModal={closeActiveModal}
               isOpen
               onRegister={handleRegister}
-              onswitchToLogin={() => setActiveModal("login")}
+              onswitchToLogin={() => setActiveModal("log-in")}
             />
           )}
           {activeModal === "log-in" && (

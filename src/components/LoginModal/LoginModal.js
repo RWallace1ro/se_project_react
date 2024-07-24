@@ -10,7 +10,7 @@ const LoginModal = ({ handleCloseModal, isOpen, onSwitchToRegister }) => {
   const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
     signin(email, password)
       .then((res) => {
         localStorage.setItem("jwt", res.token);

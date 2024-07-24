@@ -202,6 +202,7 @@
   margin-right: 255px;
   /* border: none; */
   background-color: #fff;
+  text-decoration: none;
 }
 
 .modal__submitbutton:disabled {

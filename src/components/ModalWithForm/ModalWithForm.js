@@ -8,7 +8,7 @@ const ModalWithForm = ({
   onClose,
   name,
   onSubmit,
-  isFormValid,
+  // isFormValid,
   isOpen,
 }) => {
   if (!isOpen) return null;
@@ -26,7 +26,7 @@ const ModalWithForm = ({
           <button
             className="modal__add-form_buttom"
             type="submit"
-            disabled={!isFormValid}
+            // disabled={!isFormValid}
           >
             {buttonText}
           </button>

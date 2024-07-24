@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 // import { signup } from "../../auth/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import "./RegisterModal.css";
+// import "./RegisterModal.css";
+// import "./ModalWithForm.CSS";
 
 const RegisterModal = ({
   handleCloseModal,
@@ -101,6 +102,7 @@ const RegisterModal = ({
           Log In
         </button> */}
       </div>
+      {/* {error && <p className="modal__error-text">{error}</p>} */}
     </ModalWithForm>
   );
 };
