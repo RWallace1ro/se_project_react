@@ -245,7 +245,7 @@ function App() {
               onAddItem={addItem}
             />
           )}
-          {activeModal === "preview" && (
+          {activeModal === "preview" && selectedCard && (
             <ItemModal
               selectedCard={selectedCard}
               onClose={closeActiveModal}

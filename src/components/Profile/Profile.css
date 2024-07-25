@@ -10,4 +10,43 @@
   margin-left: 40px;
   align-items: flex-start;
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.profile__sign-out {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  width: 100%;
+  color: #000;
+  padding-top: 15px;
+  padding-left: 0px;
+  /* display: flex; */
+  display: block;
+  background-color: #fff;
+  border: none;
+  white-space: nowrap;
+  /* margin: 0; */
+  text-align: left;
+}
+
+.profile__change-profile-data {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  width: 100%;
+  color: #000;
+  padding-top: 30px;
+  padding-left: 0px;
+  /* display: flex; */
+  display: block;
+  background-color: #fff;
+  border: none;
+  display: inline-block;
+  white-space: nowrap;
+  /* margin: 0; */
+  text-align: left;
 }

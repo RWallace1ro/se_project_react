@@ -3,24 +3,29 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { signin } from "../../auth/auth";
 import "./LoginModal.css";
 
-const LoginModal = ({ handleCloseModal, isOpen, onSwitchToRegister }) => {
+const LoginModal = ({
+  handleCloseModal,
+  isOpen,
+  onSwitchToRegister,
+  onLogin,
+}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [isFormValid, setIsFormValid] = useState(false);
-  const [error, setError] = useState("");
+  // const [isFormValid, setIsFormValid] = useState(false);
+  // const [error, setError] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    signin(email, password)
-      .then((res) => {
-        localStorage.setItem("jwt", res.token);
-        handleCloseModal();
-        setIsFormValid("");
-      })
-      .catch((err) => {
-        setError("Incorrect password");
-        console.log(err);
-      });
+    onLogin(email, password);
+    // .then((res) => {
+    //   localStorage.setItem("jwt", res.token);
+    //   handleCloseModal();
+    //   setIsFormValid("");
+    // })
+    // .catch((err) => {
+    //   setError("Incorrect password");
+    //   console.log(err);
+    // });
   };
 
   return (
@@ -30,7 +35,7 @@ const LoginModal = ({ handleCloseModal, isOpen, onSwitchToRegister }) => {
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Log In"
-      isFormValid={isFormValid}
+      // isFormValid={isFormValid}
     >
       <label className="modal__label">
         <p className="modal__text">Email*</p>
@@ -71,7 +76,7 @@ const LoginModal = ({ handleCloseModal, isOpen, onSwitchToRegister }) => {
         </button>
         Sign Up */}
       </div>
-      {error && <p className="modal__error-text">{error}</p>}
+      {/* {error && <p className="modal__error-text">{error}</p>} */}
       {/* <p className="modal__switch-text">
         or{" "}
         <span className="modal__switch-link" onClick={handleRegister}>

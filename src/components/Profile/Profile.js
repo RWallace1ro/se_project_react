@@ -11,6 +11,7 @@ const Profile = ({
   clothingItems,
   onCreateModal,
   onSignOut,
+  handleCloseModal,
   cards,
   onCardLike,
   isLoggedIn,
@@ -25,8 +26,8 @@ const Profile = ({
     (item) => item.owner === currentUser._id
   );
 
-  // const profileName = currentUser ? currentUser.name : "";
-  const profileName = "Terrence Tegegne";
+  const profileName = currentUser ? currentUser.name : "";
+  // const profileName = "Terrence Tegegne";
 
   return (
     <div className="profile">
@@ -34,9 +35,14 @@ const Profile = ({
         <SideBar profileName={profileName} />
         <button
           type="button"
-          className="profile_sign-out"
-          onClick={onSignOut}
-        ></button>
+          className="profile__change-profile-data"
+          onClick={handleCloseModal}
+        >
+          Change profile data
+        </button>
+        <button type="button" className="profile__sign-out" onClick={onSignOut}>
+          Log out
+        </button>
       </section>
       <section className="profile__clothes">
         <ClothesSection

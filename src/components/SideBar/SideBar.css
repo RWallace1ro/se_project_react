@@ -29,7 +29,7 @@
   justify-content: space-around;
 }
 
-.profile__sign-out {
+/* .profile__sign-out {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
   font-size: 20px;
   font-style: normal;
@@ -42,9 +42,9 @@
   display: flex;
   background-color: #fff;
   border: none;
-}
+} */
 
-.profile__change-profile-data {
+/* .profile__change-profile-data {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
   font-size: 20px;
   font-style: normal;
@@ -57,4 +57,4 @@
   display: flex;
   background-color: #fff;
   border: none;
-}
+} */

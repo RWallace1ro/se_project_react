@@ -4,10 +4,11 @@ import "./ItemModal.css";
 
 const ItemModal = ({ selectedCard, onClose, handleCardDelete }) => {
   const currentUser = useContext(CurrengtUserContext);
-  const isOwn = selectedCard.owner === currentUser._id;
-  const itemDeleteButtonClassName = `item__delete-button ${
-    isOwn ? "item__delete-button_visible" : "item__delete-button_hidden"
+  const isOwn = selectedCard.owner === currentUser?._id;
+  const modalDeleteButtonClassname = `modal__delete-button ${
+    isOwn ? "modal__delete-button_visible" : "modal__delete-button_hidden"
   }`;
+  //  "item__delete-button_hidden"
 
   const handleDeleteClick = () => {
     handleCardDelete(selectedCard);
@@ -31,7 +32,7 @@ const ItemModal = ({ selectedCard, onClose, handleCardDelete }) => {
         <div className="modal__popup-text">Weather: {selectedCard.weather}</div>
         {isOwn && (
           <button
-            className={itemDeleteButtonClassName}
+            className={modalDeleteButtonClassname}
             // className="modal__delete-button"
             type="buttom"
             onClick={handleDeleteClick}
