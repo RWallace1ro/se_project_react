@@ -40,7 +40,12 @@
   cursor: pointer;
 }
 
-.modal__add-form_buttom {
+.modal__add-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__add-form_button {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
   font-weight: 700;
   font-size: 16px;
@@ -207,4 +212,25 @@
 
 .modal__submitbutton:disabled {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+/* .modal__title_data {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 20px;
+  width: 100%;
+  margin-left: 20px;
+  margin-right: 0 auto;
+  margin-top: 200px;
+} */
+
+/* .modal__label {
+  display: block;
+  margin-bottom: 10px;
+} */
+
+.modal__title_change-profile_data {
+  margin-bottom: 0;
 }

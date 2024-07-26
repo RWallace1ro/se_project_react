@@ -15,7 +15,7 @@ import RegisterModal from "../RegisterModal/RegisterModal";
 import { checkToken, signin, signup } from "../../auth/auth";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
-// import { set } from "mongoose";
+import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -36,7 +36,7 @@ function App() {
         return checkToken(token);
       })
       .then((user) => {
-        setCurrentUser(user);
+        setCurrentUser(user.data);
         setIsLoggedIn(true);
         setActiveModal("");
         history.push("/profile");
@@ -154,7 +154,7 @@ function App() {
     if (token) {
       checkToken(token)
         .then((user) => {
-          setCurrentUser(user);
+          setCurrentUser(user.data);
           setIsLoggedIn(true);
         })
         .catch((err) => {
@@ -232,6 +232,7 @@ function App() {
                 onCardLike={handleCardLike}
                 onCreateModal={() => setActiveModal("create")}
                 onSignOut={handleSignOut}
+                handleCloseModal={() => setActiveModal("edit-profile")}
                 isLoggedIn={isLoggedIn}
               />
             </Route>
@@ -251,6 +252,12 @@ function App() {
               onClose={closeActiveModal}
               handleCardDelete={handleCardDelete}
               onClick={handleCardDelete}
+            />
+          )}
+          {activeModal === "edit-profile" && (
+            <EditProfileModal
+              handleCloseModal={closeActiveModal}
+              isOpen={activeModal === "edit-profile"}
             />
           )}
           {activeModal === "register" && (

@@ -14,7 +14,7 @@ const Profile = ({
   handleCloseModal,
   cards,
   onCardLike,
-  isLoggedIn,
+  // isLoggedIn,
 }) => {
   const currentUser = useContext(CurrengtUserContext);
 
@@ -23,7 +23,7 @@ const Profile = ({
   }
 
   const userClothingItems = clothingItems.filter(
-    (item) => item.owner === currentUser._id
+    (item) => item.owner === currentUser.data?._id
   );
 
   const profileName = currentUser ? currentUser.name : "";
@@ -52,7 +52,7 @@ const Profile = ({
           onCardDelete={onCardDelete}
           clothingItems={clothingItems}
           onCreateModal={onCreateModal}
-          userclothingItems={userClothingItems}
+          userClothingItems={userClothingItems}
           onCardLike={onCardLike}
         />
       </section>
