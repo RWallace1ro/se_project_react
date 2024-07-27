@@ -9,6 +9,7 @@
   align-items: center;
   min-height: 60px;
   padding: 0 20px;
+  text-decoration: no;
 }
 
 .header__logo {
@@ -17,7 +18,7 @@
   align-items: center;
 }
 
-.header__avatar-logo {
+.header__right-section {
   display: flex;
   gap: 20px;
   align-items: center;
@@ -31,8 +32,48 @@
   line-height: 24px;
   border: none;
   background-color: #fff;
+  margin-right: 10px;
+  padding-top: 30px;
 }
 
 .add__clothes:hover {
   cursor: pointer;
+}
+
+.header__profile {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.header__avatar {
+  /* display: flex; */
+  align-items: center;
+  margin-left: 255px;
+}
+
+.header__avatar-image {
+  width: 40px;
+  height: 40px;
+  border-radius: 1px;
+  padding-left: 50x;
+}
+
+.header__avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  border-radius: 1px;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.header__username {
+  margin-right: 200px;
 }

@@ -35,6 +35,7 @@ const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
               type="buttom"
               className={itemLikeButtonClassName}
               onClick={handleLike}
+              aria-label={isLiked ? "unlike" : "like"}
             ></button>
           )}
         </div>

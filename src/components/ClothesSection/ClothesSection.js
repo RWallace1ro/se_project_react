@@ -10,8 +10,10 @@ const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
     return null;
   }
   const userClothingItems = clothingItems.filter(
-    (item) => item.owner === currentUser.data?._id
+    (item) => item.owner === currentUser._id
   );
+
+  console.log(currentUser);
 
   return (
     <div className="profile__items">

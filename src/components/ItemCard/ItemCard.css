@@ -46,3 +46,22 @@
 .card_image:hover {
   cursor: pointer;
 }
+
+.item__like-button {
+  background-image: url("../../images/like-icon.svg");
+  background: no-repeat;
+  width: 18px;
+  height: 15px;
+  border: 2px;
+  border-color: rgba(0, 0, 0, 0.6);
+  align-items: center;
+  position: absolute;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.item__like-button_active {
+  background-image: url("../../images/like-icon.svg");
+  background: no-repeat;
+  background-color: #000;
+}

@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import logo from "../../images/logo.svg";
 import "./Header.css";
-import avatar from "../../images/avatar.svg";
+// import avatar from "../../images/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
@@ -21,9 +21,9 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div>July 24, VA</div>
+        <div>July 26, VA</div>
       </div>
-      <div className="header__avatar-logo">
+      <div className="header__right-section">
         <ToggleSwitch />
         <div>
           <button
@@ -36,11 +36,15 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
             +Add clothes
           </button>
           {isLoggedIn ? (
-            <Link to="/profile">
-              {currentUser.name}
+            <Link to="/profile" className="header_profile">
+              <span className="header__username">{currentUser.name}</span>
               <div className="header__avatar">
                 {currentUser.avatar ? (
-                  <img src={currentUser.avatar} alt="avatar" />
+                  <img
+                    src={currentUser.avatar}
+                    alt="avatar"
+                    className="header__avatar-image"
+                  />
                 ) : (
                   <div className="header__avatar-placeholder">
                     {userInitial}
@@ -59,13 +63,6 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
             </>
           )}
         </div>
-        <div>
-          <img src={avatar} alt="avatar" />
-        </div>
-        {/* <Link to="/profile">Name</Link> */}
-        {/* <div> 
-          <img src={avatar} alt="avatar" />
-        </div> */}
       </div>
     </header>
   );
