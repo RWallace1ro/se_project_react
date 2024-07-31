@@ -9,7 +9,8 @@
   align-items: center;
   min-height: 60px;
   padding: 0 20px;
-  text-decoration: no;
+  text-decoration: none;
+  display: flex;
 }
 
 .header__logo {
@@ -22,6 +23,7 @@
   display: flex;
   gap: 20px;
   align-items: center;
+  text-decoration: none;
 }
 
 .add__clothes {
@@ -33,7 +35,6 @@
   border: none;
   background-color: #fff;
   margin-right: 10px;
-  padding-top: 30px;
 }
 
 .add__clothes:hover {
@@ -45,19 +46,14 @@
   align-items: center;
   text-decoration: none;
   color: inherit;
-}
-
-.header__avatar {
-  /* display: flex; */
-  align-items: center;
-  margin-left: 255px;
+  text-decoration: none;
 }
 
 .header__avatar-image {
   width: 40px;
   height: 40px;
   border-radius: 1px;
-  padding-left: 50x;
+  margin-left: 10px;
 }
 
 .header__avatar-placeholder {
@@ -72,8 +68,10 @@
   font-weight: bold;
   color: #fff;
   margin-left: 10px;
+  text-decoration: none;
 }
 
 .header__username {
-  margin-right: 200px;
+  padding-right: 10px;
+  text-decoration: none;
 }

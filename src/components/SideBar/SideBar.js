@@ -10,8 +10,8 @@ const SideBar = ({ profileName }) => {
       <div className="profile__info">
         <img
           src={currentUser.avatar}
-          alt="avatar"
-          className="header__avatar-image"
+          alt="Profile-avatar"
+          className="profile-image"
         />
         {/* <img
           src={profileAvatar}

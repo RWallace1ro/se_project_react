@@ -10,8 +10,8 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLoggedIn = !!currentUser;
   console.log("Logged In");
-  const userInitial =
-    isLoggedIn && currentUser.name ? currentUser.name[0].toUpperCase() : "";
+  // const userInitial =
+  //   isLoggedIn && currentUser.name ? currentUser.name[0].toUpperCase() : "";
 
   return (
     <header className="header">
@@ -21,13 +21,13 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
             <img src={logo} alt="logo" />
           </Link>
         </div>
-        <div>July 26, VA</div>
+        <div>July 28, VA</div>
       </div>
       <div className="header__right-section">
         <ToggleSwitch />
         <div>
           <button
-            type="text"
+            type="button"
             className="add__clothes"
             onClick={() => {
               onCreateModal();
@@ -38,19 +38,17 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
           {isLoggedIn ? (
             <Link to="/profile" className="header_profile">
               <span className="header__username">{currentUser.name}</span>
-              <div className="header__avatar">
-                {currentUser.avatar ? (
-                  <img
-                    src={currentUser.avatar}
-                    alt="avatar"
-                    className="header__avatar-image"
-                  />
-                ) : (
-                  <div className="header__avatar-placeholder">
-                    {userInitial}
-                  </div>
-                )}
-              </div>
+              {currentUser.avatar ? (
+                <img
+                  src={currentUser.avatar}
+                  alt="avatar"
+                  className="header__avatar-image"
+                />
+              ) : (
+                <div className="header__avatar-placeholder">
+                  {currentUser.name[0].toUpperCase()}
+                </div>
+              )}
             </Link>
           ) : (
             <>

@@ -3,7 +3,12 @@ import "../ClothesSection/ClothesSection.css";
 import React, { useContext } from "react";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 
-const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
+const ClothesSection = ({
+  onSelectedCard,
+  clothingItems,
+  onCreateModal,
+  onCardLike,
+}) => {
   const currentUser = useContext(CurrengtUserContext);
 
   if (!currentUser) {
@@ -38,6 +43,7 @@ const ClothesSection = ({ onSelectedCard, clothingItems, onCreateModal }) => {
             item={item}
             onSelectedCard={onSelectedCard}
             onClick={clothingItems}
+            onCardLike={onCardLike}
           />
         ))}
       </div>

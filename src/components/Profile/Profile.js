@@ -27,7 +27,6 @@ const Profile = ({
   );
 
   const profileName = currentUser ? currentUser.name : "";
-  // const profileName = "Terrence Tegegne";
 
   return (
     <div className="profile">

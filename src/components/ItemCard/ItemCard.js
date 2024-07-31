@@ -5,7 +5,7 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
   const currentUser = useContext(CurrentUserContext);
   const isLiked = item.likes.some((id) => id === currentUser?._id);
-  const itemLikeButtonClassName = `item_like-button ${
+  const itemLikeButtonClassName = `item__like-button ${
     isLiked ? "item__like-button_active" : ""
   }`;
 
@@ -20,11 +20,11 @@ const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
   return (
     <div className="card">
       <div className="card__content">
-        <p className="card__name name_frame">{item.name}</p>
+        <p className="card__name name__frame">{item.name}</p>
         <div>
           <img
             src={item.imageUrl}
-            className="card_image"
+            className="card__image"
             alt={item.name}
             // onClick={() => onSelectedCard(item)}
             onClick={onCardClick}
