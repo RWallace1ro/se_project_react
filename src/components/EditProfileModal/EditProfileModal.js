@@ -26,8 +26,8 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
     api
       .updateUser({ name, avatar })
       .then((updatedUser) => {
+        setCurrentUser(updatedUser);
         handleCloseModal("");
-        setCurrentUser(updatedUser.data);
       })
       .catch((err) => console.log(err));
   };
@@ -41,7 +41,7 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
       buttonText="Save changes"
       isFormValid={isFormValid}
     >
-      <label classname="modal__label">
+      <label className="modal__label">
         <p className="modal__text">Name*</p>
         <input
           className="modal__input"
@@ -52,7 +52,7 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
           required
         />
       </label>
-      <label classname="modal__label">
+      <label className="modal__label">
         <p className="modal__text">Avatar URL*</p>
         <input
           className="modal__input"

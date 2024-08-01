@@ -6,12 +6,13 @@ import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const Header = ({ onCreateModal, onLogin, onRegister }) => {
+const Header = ({ onCreateModal, onLogin, onRegister, isLoggedIn }) => {
   const currentUser = useContext(CurrentUserContext);
-  const isLoggedIn = !!currentUser;
-  console.log("Logged In");
-  // const userInitial =
-  //   isLoggedIn && currentUser.name ? currentUser.name[0].toUpperCase() : "";
+  // const isLoggedIn = !!currentUser;
+  // console.log("Logged In");
+
+  const userInitial =
+    isLoggedIn && currentUser.name ? currentUser.name[0].toUpperCase() : "";
 
   return (
     <header className="header">
@@ -25,9 +26,9 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
       </div>
       <div className="header__right-section">
         <ToggleSwitch />
-        <div>
+        {isLoggedIn && (
           <button
-            type="button"
+            type="text"
             className="add__clothes"
             onClick={() => {
               onCreateModal();
@@ -35,9 +36,11 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
           >
             +Add clothes
           </button>
-          {isLoggedIn ? (
-            <Link to="/profile" className="header_profile">
-              <span className="header__username">{currentUser.name}</span>
+        )}
+        {isLoggedIn ? (
+          <Link to="/profile" className="header__profile">
+            <div className="header__username-avatar">
+              <div className="header__username">{currentUser.name}</div>
               {currentUser.avatar ? (
                 <img
                   src={currentUser.avatar}
@@ -47,20 +50,25 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
               ) : (
                 <div className="header__avatar-placeholder">
                   {currentUser.name[0].toUpperCase()}
+                  {userInitial}
                 </div>
               )}
-            </Link>
-          ) : (
-            <>
-              <button type="button" onClick={onLogin}>
-                Log In
-              </button>
-              <button type="button" onClick={onRegister}>
-                Sign Up
-              </button>
-            </>
-          )}
-        </div>
+            </div>
+          </Link>
+        ) : (
+          <>
+            <button type="button" className="log__in-form" onClick={onLogin}>
+              Log In
+            </button>
+            <button
+              type="button"
+              className="sign__up-form"
+              onClick={onRegister}
+            >
+              Sign Up
+            </button>
+          </>
+        )}
       </div>
     </header>
   );

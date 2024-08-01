@@ -121,7 +121,7 @@ function App() {
 
   const handleCardLike = ({ id, isLiked }) => {
     const token = localStorage.getItem("jwt");
-    if (isLiked) {
+    if (!isLiked) {
       api
         .addCardLike(id, token)
         .then((updatedCard) => {
@@ -211,6 +211,7 @@ function App() {
             onCreateModal={() => setActiveModal("create")}
             onLogin={() => setActiveModal("log-in")}
             onRegister={() => setActiveModal("register")}
+            isLoggedIn={isLoggedIn}
           />
           <Switch>
             <Route exact path="/">

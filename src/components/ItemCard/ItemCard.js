@@ -10,6 +10,7 @@ const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
   }`;
 
   const handleLike = () => {
+    console.log("Like button clicked", item._id);
     onCardLike({ id: item._id, isLiked });
   };
 

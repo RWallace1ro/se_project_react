@@ -11,13 +11,9 @@ const SideBar = ({ profileName }) => {
         <img
           src={currentUser.avatar}
           alt="Profile-avatar"
-          className="profile-image"
+          className="profile__image"
         />
-        {/* <img
-          src={profileAvatar}
-          className="Profile__image"
-          alt="Profile-avatar"
-        /> */}
+
         <p className="profile__name">{profileName}</p>
       </div>
     </div>

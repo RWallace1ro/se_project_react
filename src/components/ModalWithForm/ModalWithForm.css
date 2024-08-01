@@ -230,3 +230,44 @@
 .modal__title_change-profile_data {
   margin-bottom: 0;
 }
+
+.log__in-form {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  width: 52px;
+  height: 25px;
+  margin-top: 8px;
+  white-space: nowrap;
+  background-color: #fff;
+  border: none;
+}
+
+.sign__up-form {
+  font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 24px;
+  width: 67px;
+  height: 24px;
+  margin-top: 8px;
+  margin-top: 8px;
+  background-color: #fff;
+  border: none;
+}
+
+.modal__error-text {
+  /* font-family: "Cabinet Grotesk", "Arial", "sans-serif";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700; */
+  width: 138px;
+  height: 20px;
+  color: #ff4d00;
+  padding-left: 10px;
+  /* border-bottom: 440px;
+  border-color: #ff4d00; */
+}
