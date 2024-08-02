@@ -55,13 +55,16 @@ const LoginModal = ({
         {error && <p className="modal__error-text">{error}</p>}
 
         <input
-          className="modal__input"
+          className={`modal__input ${error ? "error" : ""}`}
           type="password"
           name="password"
           placeholder="Password"
           minLength="6"
           value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={(e) => {
+            setPassword(e.target.value);
+            if (error) setError("");
+          }}
           required
         />
       </label>
