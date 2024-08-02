@@ -14,7 +14,7 @@ import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 import { checkToken, signin, signup } from "../../auth/auth";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
-import LoadingIndicator from "../LoadingIndicator/Loadingindicator";
+import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
 
 function App() {
