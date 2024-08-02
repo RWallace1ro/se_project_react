@@ -32,7 +32,6 @@ const ItemModal = ({ selectedCard, onClose, handleCardDelete }) => {
         {isOwn && (
           <button
             className={modalDeleteButtonClassname}
-            // className="modal__delete-button"
             type="buttom"
             onClick={handleDeleteClick}
           >

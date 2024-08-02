@@ -14,7 +14,6 @@ const Profile = ({
   handleCloseModal,
   cards,
   onCardLike,
-  // isLoggedIn,
 }) => {
   const currentUser = useContext(CurrengtUserContext);
 

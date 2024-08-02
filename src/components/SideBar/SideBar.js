@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-// import profileAvatar from "../../images/profileAvatar.svg";
 import "./SideBar.css";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 

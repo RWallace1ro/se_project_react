@@ -2,13 +2,6 @@ import handleServerResponse from "../utils/utils";
 
 const BASE_URL = "http://localhost:3001";
 
-// const handleServerResponse = (res) => {
-//   if (!res.ok) {
-//     return res.json().then((err) => Promise.reject(err));
-//   }
-//   return res.json();
-// };
-
 const signup = (name, avatar, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
     method: "POST",

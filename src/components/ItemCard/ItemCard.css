@@ -59,19 +59,11 @@
   cursor: pointer;
   top: 25px;
   left: 220px;
-  /* background-color: transparent; */
   background-size: cover;
-  /* display: inline-block; */
   outline: none;
-  /* box-shadow: none; */
-  /* border: none; */
-  /* border: 2px solid transparent;  */
-  /* padding: 0%; */
 }
 
 .item__like-button_active {
-  background-image: url("../../images/like-icon.svg");
-  /* background-repeat: no-repeat; */
-  background-color: #000;
+  background-image: url("../../images/like-icon-active.svg");
   background-size: cover;
 }

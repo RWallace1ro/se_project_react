@@ -1,18 +1,14 @@
 import React, { useContext } from "react";
 import logo from "../../images/logo.svg";
 import "./Header.css";
-// import avatar from "../../images/avatar.svg";
 import ToggleSwitch from "../ToggleSwitch/ToggleSwitch";
 import { Link } from "react-router-dom";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-const Header = ({ onCreateModal, onLogin, onRegister, isLoggedIn }) => {
+const Header = ({ onCreateModal, onLogin, onRegister }) => {
   const currentUser = useContext(CurrentUserContext);
-  // const isLoggedIn = !!currentUser;
-  // console.log("Logged In");
-
-  const userInitial =
-    isLoggedIn && currentUser.name ? currentUser.name[0].toUpperCase() : "";
+  const isLoggedIn = !!currentUser;
+  console.log("Logged In");
 
   return (
     <header className="header">
@@ -50,7 +46,6 @@ const Header = ({ onCreateModal, onLogin, onRegister, isLoggedIn }) => {
               ) : (
                 <div className="header__avatar-placeholder">
                   {currentUser.name[0].toUpperCase()}
-                  {userInitial}
                 </div>
               )}
             </div>

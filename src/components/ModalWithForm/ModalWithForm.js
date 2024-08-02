@@ -8,7 +8,6 @@ const ModalWithForm = ({
   onClose,
   name,
   onSubmit,
-  // isFormValid,
   isOpen,
 }) => {
   if (!isOpen) return null;
@@ -32,11 +31,7 @@ const ModalWithForm = ({
         </h3>
         <form className="modal__add-form" onSubmit={onSubmit}>
           {children}
-          <button
-            className="modal__add-form_button"
-            type="submit"
-            // disabled={!isFormValid}
-          >
+          <button className="modal__add-form_button" type="submit">
             {buttonText}
           </button>
         </form>
@@ -44,11 +39,5 @@ const ModalWithForm = ({
     </div>
   );
 };
-
-// function handleOverlayClick(e) {
-//   if (e.target === e.currentTarget) {
-//     onClose();
-//   }
-// }
 
 export default ModalWithForm;

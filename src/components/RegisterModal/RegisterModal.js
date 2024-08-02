@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-// import { signup } from "../../auth/auth";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-// import "./RegisterModal.css";
-// import "./ModalWithForm.CSS";
 
 const RegisterModal = ({
   handleCloseModal,
@@ -14,20 +11,11 @@ const RegisterModal = ({
   const [avatar, setAvatar] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [isFormValid, setIsFormValid] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     onRegister(name, email, password, avatar);
   };
-  // const handleSubmit = (e) => {
-  //   e.prevenDefault();
-  //   signup(name, avatar, email, password)
-  //     .then((res) => {
-  //       handleCloseModal();
-  //     })
-  //     .catch((err) => console.log(err));
-  // };
 
   return (
     <ModalWithForm
@@ -36,7 +24,6 @@ const RegisterModal = ({
       isOpen={isOpen}
       onSubmit={handleSubmit}
       buttonText="Sign Up"
-      // isFormValid={isFormValid}
     >
       <label className="modal__label">
         <p className="modal__text">Email*</p>
@@ -94,21 +81,12 @@ const RegisterModal = ({
         <a href="#" className="modal__switch-link" onClick={onSwitchToLogin}>
           Log In
         </a>
-        {/* <button
-          type="button"
-          className="modal__switch-link"
-          onClick={onSwitchToLogin}
-        >
-          Log In
-        </button> */}
       </div>
-      {/* {error && <p className="modal__error-text">{error}</p>} */}
     </ModalWithForm>
   );
 };
 
 {
-  /* <button type="text">Sign up</button> */
 }
 
 export default RegisterModal;

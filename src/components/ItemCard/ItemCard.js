@@ -27,9 +27,7 @@ const ItemCard = ({ item, onSelectedCard, onCardLike }) => {
             src={item.imageUrl}
             className="card__image"
             alt={item.name}
-            // onClick={() => onSelectedCard(item)}
             onClick={onCardClick}
-            // onClick={() => onSelectedCard}
           />
           {currentUser && (
             <button

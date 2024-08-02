@@ -49,40 +49,12 @@ function App() {
   const handleRegister = (name, email, password, avatar) => {
     signup(name, avatar, email, password)
       .then(() => handleLogin(email, password))
-      // .then(() => setActiveModal(""))
       .catch((err) => {
         console.log(err);
       });
   };
 
-  // const handleRegister = (name, email, password, avatar) => {
-  //   signup(name, avatar, email, password)
-  //     .then((user) => {
-  //       setCurrentUser(user);
-  //       setIsLoggedIn(true);
-  //       setActiveModal("");
-  //       handleLogin(email, password);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-
   const closeActiveModal = () => setActiveModal("");
-
-  // const closeActiveModal = () => {
-  //   {
-  //     setActiveModal("");
-  //   }
-  // };
-
-  // const handleCreateModal = () => {
-  //   setActiveModal("create");
-  // };
-
-  // const handleCloseModal = () => {
-  //   setActiveModal("");
-  // };
 
   const handleSelectedCard = (card) => {
     setActiveModal("preview");
@@ -206,7 +178,6 @@ function App() {
         <CurrentTemperatureUnitContext.Provider
           value={{ currentTemperatureUnit, handleToggleSwitchChange }}
         >
-          {/* <Header onCreateModal={handleCreateModal} /> */}
           <Header
             onCreateModal={() => setActiveModal("create")}
             onLogin={() => setActiveModal("log-in")}
@@ -229,7 +200,6 @@ function App() {
                 clothingItems={clothingItems}
                 onSelectedCard={handleSelectedCard}
                 onCardDelete={handleCardDelete}
-                // onCreateModal={handleCreateModal}
                 onCardLike={handleCardLike}
                 onCreateModal={() => setActiveModal("create")}
                 onSignOut={handleSignOut}
