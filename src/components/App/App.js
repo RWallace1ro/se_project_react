@@ -12,7 +12,7 @@ import api from "../../utils/api";
 import Profile from "../Profile/Profile";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import { checkToken, signin, signup } from "../../auth/auth";
+import { checkToken, signin, signup } from "../../utils/auth";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
