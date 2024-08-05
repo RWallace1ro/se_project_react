@@ -4,14 +4,15 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 const SideBar = ({ profileName }) => {
   const currentUser = useContext(CurrentUserContext);
+
+  const avatarUrl = currentUser?.avatar
+    ? `${currentUser.avatar}?${new Date().getTime()}`
+    : "defaultAvatarPath";
+
   return (
     <div className="sidebar">
       <div className="profile__info">
-        <img
-          src={currentUser.avatar}
-          alt="Profile-avatar"
-          className="profile__image"
-        />
+        <img src={avatarUrl} alt="Profile-avatar" className="profile__image" />
 
         <p className="profile__name">{profileName}</p>
       </div>

@@ -10,6 +10,10 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
   const isLoggedIn = !!currentUser;
   console.log("Logged In");
 
+  const avatarUrl = currentUser?.avatar
+    ? `${currentUser.avatar}?${new Date().getTime()}`
+    : "defaultAvatarPath";
+
   return (
     <header className="header">
       <div className="header__logo">
@@ -39,7 +43,7 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
               <div className="header__username">{currentUser.name}</div>
               {currentUser.avatar ? (
                 <img
-                  src={currentUser.avatar}
+                  src={avatarUrl}
                   alt="avatar"
                   className="header__avatar-image"
                 />

@@ -9,6 +9,7 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
   const [name, setName] = useState(currentUser?.name || "");
   const [avatar, setAvatar] = useState(currentUser?.avatar || "");
   const [isFormValid, setIsFormValid] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     if (isOpen) {
@@ -24,13 +25,19 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
 
   const handleSubmit = (e) => {
     e.prevenDefault();
+    setError();
+    const token = localStorage.getItem("jwt");
     api
-      .updateUser({ name, avatar })
+      .updateUser({ name, avatar }, token)
       .then((updatedUser) => {
+        console.log("User updated:", updatedUser);
         setCurrentUser(updatedUser);
         handleCloseModal("");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        setError("Failed to update profile.  Please try again");
+      });
   };
 
   return (
@@ -42,6 +49,7 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
       buttonText="Save changes"
       isFormValid={isFormValid}
     >
+      {error && <div className="error-message">{error}</div>}
       <label className="modal__label">
         <p className="modal__text">Name*</p>
         <input

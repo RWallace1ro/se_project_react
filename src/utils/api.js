@@ -59,6 +59,21 @@ const removeCardLike = (id) => {
   }).then(handleServerResponse);
 };
 
+const updateUser = (data, token) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: "PATCH",
+    headers: {
+      "content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    if (res.ok) {
+      return Promise.reject(`Error: ${res.status}`);
+    }
+    return res.json();
+  });
+};
 // const createItem = (_id) =>
 //   return fetch(`${BASE_URL}/items/${_id}`, {
 //     method: "POST",
@@ -85,6 +100,7 @@ const api = {
   deleteItem,
   addCardLike,
   removeCardLike,
+  updateUser,
   // createItem,
   // login,
 };
