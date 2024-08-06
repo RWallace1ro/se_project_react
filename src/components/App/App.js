@@ -28,6 +28,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
+  const handleProfileEdit = (updatedUser) => {
+    setCurrentUser(updatedUser);
+  };
+
   const handleLogin = (email, password) => {
     signin(email, password)
       .then(({ token }) => {
@@ -229,6 +233,7 @@ function App() {
             <EditProfileModal
               handleCloseModal={closeActiveModal}
               isOpen={activeModal === "edit-profile"}
+              onProfileEdit={handleProfileEdit}
             />
           )}
           {activeModal === "register" && (

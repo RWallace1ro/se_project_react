@@ -153,8 +153,8 @@
 }
 
 .modal__popup-image {
-  min-width: 498px;
-  min-height: 498px;
+  width: 498px;
+  height: 498px;
   border-radius: 16px;
 }
 

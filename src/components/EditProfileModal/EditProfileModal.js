@@ -4,12 +4,14 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 import api from "../../utils/api";
 import "./EditProfileModal.css";
 
-const EditProfileModal = ({ handleCloseModal, isOpen }) => {
-  const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
+const EditProfileModal = ({ handleCloseModal, isOpen, onProfileEdit }) => {
+  const currentUser = useContext(CurrentUserContext);
   const [name, setName] = useState(currentUser?.name || "");
   const [avatar, setAvatar] = useState(currentUser?.avatar || "");
   const [isFormValid, setIsFormValid] = useState(false);
   const [error, setError] = useState("");
+
+  // const avatarUrl = currentUser?.avatar;
 
   useEffect(() => {
     if (isOpen) {
@@ -30,9 +32,9 @@ const EditProfileModal = ({ handleCloseModal, isOpen }) => {
     api
       .updateUser({ name, avatar }, token)
       .then((updatedUser) => {
-        console.log("User updated:", updatedUser);
-        setCurrentUser(updatedUser);
-        handleCloseModal("");
+        // setCurrentUser(updatedUser);
+        handleCloseModal();
+        onProfileEdit(updatedUser);
       })
       .catch((err) => {
         console.log(err);

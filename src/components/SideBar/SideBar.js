@@ -5,9 +5,8 @@ import CurrentUserContext from "../../contexts/CurrentUserContext";
 const SideBar = ({ profileName }) => {
   const currentUser = useContext(CurrentUserContext);
 
-  const avatarUrl = currentUser?.avatar
-    ? `${currentUser.avatar}?${new Date().getTime()}`
-    : "defaultAvatarPath";
+  const avatarUrl = currentUser?.avatar;
+  //  || "path/to/defaultAvatar.svg";
 
   return (
     <div className="sidebar">

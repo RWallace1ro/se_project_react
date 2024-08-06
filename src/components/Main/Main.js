@@ -15,10 +15,10 @@ function Main({ weatherTemp, onSelectedCard, clothingItems, onCardLike }) {
       return "hot";
     } else if (temp >= 66 && temp <= 85) {
       return "warm";
-    } else if (temp <= 65) {
+    } else {
       return "cold";
     }
-  }, [temp]);
+  }, []);
 
   const temperatureUnit = useMemo(() => {
     if (currentTemperatureUnit === "F") {

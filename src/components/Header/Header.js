@@ -10,9 +10,8 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
   const isLoggedIn = !!currentUser;
   console.log("Logged In");
 
-  const avatarUrl = currentUser?.avatar
-    ? `${currentUser.avatar}?${new Date().getTime()}`
-    : "defaultAvatarPath";
+  const avatarUrl = currentUser?.avatar;
+  // || "path/to/defaultAvatar.svg";
 
   return (
     <header className="header">

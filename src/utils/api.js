@@ -74,25 +74,6 @@ const updateUser = (data, token) => {
     return res.json();
   });
 };
-// const createItem = (_id) =>
-//   return fetch(`${BASE_URL}/items/${_id}`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ name, avatar, email, password }),
-//   }).then(handleServerResponse);
-// };
-
-// const login = (_id) => {
-//   return fetch(`${BASE_URL}/items/${_id}`, {
-//     method: "POST",
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//     body: JSON.stringify({ email, password }),
-//   }).then(handleServerResponse);
-// };
 
 const api = {
   getItemList,
@@ -101,8 +82,6 @@ const api = {
   addCardLike,
   removeCardLike,
   updateUser,
-  // createItem,
-  // login,
 };
 
 export default api;
