@@ -39,7 +39,7 @@
 
 .card__image {
   width: 328px;
-  min-height: 328px;
+  height: 328px;
   border-radius: 10px;
 }
 

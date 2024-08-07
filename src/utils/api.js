@@ -68,7 +68,7 @@ const updateUser = (data, token) => {
     },
     body: JSON.stringify(data),
   }).then((res) => {
-    if (res.ok) {
+    if (!res.ok) {
       return Promise.reject(`Error: ${res.status}`);
     }
     return res.json();

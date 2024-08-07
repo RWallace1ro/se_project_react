@@ -11,8 +11,6 @@ const EditProfileModal = ({ handleCloseModal, isOpen, onProfileEdit }) => {
   const [isFormValid, setIsFormValid] = useState(false);
   const [error, setError] = useState("");
 
-  // const avatarUrl = currentUser?.avatar;
-
   useEffect(() => {
     if (isOpen) {
       setName(currentUser?.name || "");
@@ -26,13 +24,12 @@ const EditProfileModal = ({ handleCloseModal, isOpen, onProfileEdit }) => {
   }, [name, avatar]);
 
   const handleSubmit = (e) => {
-    e.prevenDefault();
+    e.preventDefault();
     setError();
     const token = localStorage.getItem("jwt");
     api
       .updateUser({ name, avatar }, token)
       .then((updatedUser) => {
-        // setCurrentUser(updatedUser);
         handleCloseModal();
         onProfileEdit(updatedUser);
       })
