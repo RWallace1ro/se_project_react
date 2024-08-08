@@ -40,6 +40,10 @@
   cursor: pointer;
 }
 
+/* .modal__close-button:disabled {
+  background-color: rgba(0, 0, 0, 0.3);
+} */
+
 .modal__add-form {
   display: flex;
   flex-direction: column;
@@ -185,6 +189,7 @@
   margin-left: 20px;
   margin-bottom: -88px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .modal__switch-link {
@@ -206,10 +211,6 @@
   text-decoration: none;
 }
 
-.modal__submitbutton:disabled {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
 .modal__title_change-profile_data {
   margin-bottom: 0;
 }
@@ -226,6 +227,7 @@
   white-space: nowrap;
   background-color: #fff;
   border: none;
+  cursor: pointer;
 }
 
 .sign__up-form {

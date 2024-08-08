@@ -40,23 +40,11 @@ const Header = ({ onCreateModal, onLogin, onRegister }) => {
           <Link to="/profile" className="header__profile">
             <div className="header__username-avatar">
               <div className="header__username">{currentUser.name}</div>
-              {/* {currentUser.avatar ? ( */}
               <img
                 src={avatarUrl}
-                // src={imageError ? undefined : avatarUrl}
                 alt="avatar"
                 className="header__avatar-image"
-                // className={`header__avatar-image ${
-                //   imageError ? "fallback" : ""
-                // }`}
-                // onError={() => setImageError()}
               />
-              {/* ) : ( */}
-
-              {/* <div className="header__avatar-placeholder">
-                {currentUser.name[0].toUpperCase()}
-              </div> */}
-              {/* )} */}
             </div>
           </Link>
         ) : (

@@ -31,6 +31,10 @@
   text-align: left;
 }
 
+.profile__sign-out:hover {
+  cursor: pointer;
+}
+
 .profile__change-profile-data {
   font-family: "Cabinet Grotesk", "Arial", "sans-serif";
   font-size: 20px;
@@ -46,4 +50,8 @@
   display: inline-block;
   white-space: nowrap;
   text-align: left;
+}
+
+.profile__change-profile-data:hover {
+  cursor: pointer;
 }

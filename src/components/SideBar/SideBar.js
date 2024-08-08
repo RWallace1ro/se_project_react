@@ -10,7 +10,7 @@ const SideBar = ({ profileName }) => {
   return (
     <div className="sidebar">
       <div className="profile__info">
-        <img src={avatarUrl} className="profile__image" alt="profile-avatar" />
+        <img src={avatarUrl} className="profile__image" alt="avatar" />
         <p className="profile__name">{profileName}</p>
       </div>
     </div>

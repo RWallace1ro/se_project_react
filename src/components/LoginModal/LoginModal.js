@@ -66,6 +66,7 @@ const LoginModal = ({
           required
         />
       </label>
+
       <div className="modal__switch-container">
         <span className="modal__switch-text">or</span>
         <a href="#" className="modal__switch-link" onClick={onSwitchToRegister}>

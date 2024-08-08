@@ -16,3 +16,7 @@
   justify-content: center;
   background-color: #fff;
 }
+
+.item__delete-button {
+  cursor: pointer;
+}
