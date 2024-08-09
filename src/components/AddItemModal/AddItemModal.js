@@ -3,7 +3,7 @@ import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 const AddItemModal = ({
   handleCloseModal,
-  setActiveModal,
+  closeActiveModal,
   onAddItem,
   isOpen,
 }) => {
@@ -44,7 +44,7 @@ const AddItemModal = ({
       onClose={handleCloseModal}
       isOpen={isOpen}
       onSubmit={handleSubmit}
-      setActiveModal={setActiveModal}
+      ActiveModal={closeActiveModal}
       buttonText="Add garment"
     >
       <div className="modal__text-content">

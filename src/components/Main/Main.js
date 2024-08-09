@@ -11,21 +11,28 @@ function Main({ weatherTemp, onSelectedCard, clothingItems, onCardLike }) {
   const temp = weatherTemp?.temperature?.[currentTemperatureUnit] || 299;
 
   const weatherType = useMemo(() => {
-    if (temp >= 86) {
-      return "hot";
-    } else if (temp >= 66 && temp <= 85) {
-      return "warm";
-    } else {
-      return "cold";
+    if (currentTemperatureUnit === "F") {
+      if (temp >= 86) {
+        return "hot";
+      } else if (temp >= 66 && temp <= 85) {
+        return "warm";
+      } else {
+        return "cold";
+      }
+    } else if (CurrentTemperatureUnitContext === "C") {
+      if (currentTemperatureUnit === "F")
+        if (temp >= 30) {
+          return "hot";
+        } else if (temp >= 66 && temp <= 85) {
+          return "warm";
+        } else {
+          return "cold";
+        }
     }
-  }, []);
+  }, [temp, currentTemperatureUnit]);
 
   const temperatureUnit = useMemo(() => {
-    if (currentTemperatureUnit === "F") {
-      return "Fahrenheit";
-    } else if (currentTemperatureUnit === "C") {
-      return "Celsius";
-    }
+    return currentTemperatureUnit === "F" ? "Fahrenheit" : "Celsius";
   }, [currentTemperatureUnit]);
 
   console.log("Temperature Unit:", temperatureUnit);
@@ -40,7 +47,7 @@ function Main({ weatherTemp, onSelectedCard, clothingItems, onCardLike }) {
       <WeatherCard day={false} type="cloudy-night" weatherTemp={temp} />
       <section className="cards" id="card-section">
         <div className="weather__temp">
-          Today is {temp}&deg; F / You may want to wear:
+          Today is {temp}&deg; {currentTemperatureUnit} / You may want to wear:
         </div>
         <div className="cards__items">
           {filteredItems.map((item) => (

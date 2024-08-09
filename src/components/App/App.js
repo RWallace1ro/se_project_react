@@ -16,6 +16,7 @@ import { checkToken, signin, signup } from "../../utils/auth";
 import CurrengtUserContext from "../../contexts/CurrentUserContext";
 import LoadingIndicator from "../LoadingIndicator/LoadingIndicator";
 import EditProfileModal from "../EditProfileModal/EditProfileModal";
+import ProtectedRoute from "../ProtectedRoute";
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -28,8 +29,17 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
   const history = useHistory();
 
-  const handleProfileEdit = (updatedUser) => {
-    setCurrentUser(updatedUser.data);
+  const handleProfileEdit = (name, avatar) => {
+    const token = localStorage.getItem("jwt");
+    return api
+      .updateUser({ name, avatar }, token)
+      .then((updatedUser) => {
+        setCurrentUser(updatedUser.data);
+      })
+      .catch((err) => {
+        console.log(err);
+        throw new Error("Failed to update profile.  Please try again");
+      });
   };
 
   const handleLogin = (email, password) => {
@@ -42,7 +52,7 @@ function App() {
       .then((user) => {
         setCurrentUser(user.data);
         setIsLoggedIn(true);
-        setActiveModal("");
+        closeActiveModal("");
         history.push("/profile");
       })
       .catch((err) => {
@@ -61,7 +71,7 @@ function App() {
   const closeActiveModal = () => setActiveModal("");
 
   const handleSelectedCard = (card) => {
-    setActiveModal("preview");
+    closeActiveModal("preview");
     setSelectedCard(card);
   };
 
@@ -177,84 +187,82 @@ function App() {
   console.log(currentTemperatureUnit);
 
   return (
-    <div>
-      <CurrengtUserContext.Provider value={currentUser}>
-        <CurrentTemperatureUnitContext.Provider
-          value={{ currentTemperatureUnit, handleToggleSwitchChange }}
-        >
-          <Header
-            onCreateModal={() => setActiveModal("create")}
-            onLogin={() => setActiveModal("log-in")}
-            onRegister={() => setActiveModal("register")}
-            isLoggedIn={isLoggedIn}
+    <CurrengtUserContext.Provider value={currentUser}>
+      <CurrentTemperatureUnitContext.Provider
+        value={{ currentTemperatureUnit, handleToggleSwitchChange }}
+      >
+        <Header
+          onCreateModal={() => setActiveModal("create")}
+          onLogin={() => setActiveModal("log-in")}
+          onRegister={() => setActiveModal("register")}
+          isLoggedIn={isLoggedIn}
+        />
+        <Switch>
+          <Route exact path="/">
+            <Main
+              weatherTemp={temp}
+              cards={clothingItems}
+              onSelectedCard={handleSelectedCard}
+              onCardDelete={handleCardDelete}
+              onCardLike={handleCardLike}
+              clothingItems={clothingItems}
+            />
+          </Route>
+          <ProtectedRoute exact path="/profile">
+            <Profile
+              clothingItems={clothingItems}
+              onSelectedCard={handleSelectedCard}
+              onCardDelete={handleCardDelete}
+              onCardLike={handleCardLike}
+              onCreateModal={() => setActiveModal("create")}
+              onSignOut={handleSignOut}
+              handleCloseModal={() => setActiveModal("edit-profile")}
+              isLoggedIn={isLoggedIn}
+            />
+          </ProtectedRoute>
+        </Switch>
+        <Footer />
+        {isLoading && <LoadingIndicator />}
+        {activeModal === "create" && (
+          <AddItemModal
+            handleCloseModal={closeActiveModal}
+            isOpen={activeModal === "create"}
+            onAddItem={addItem}
           />
-          <Switch>
-            <Route exact path="/">
-              <Main
-                weatherTemp={temp}
-                cards={clothingItems}
-                onSelectedCard={handleSelectedCard}
-                onCardDelete={handleCardDelete}
-                onCardLike={handleCardLike}
-                clothingItems={clothingItems}
-              />
-            </Route>
-            <Route exact path="/profile">
-              <Profile
-                clothingItems={clothingItems}
-                onSelectedCard={handleSelectedCard}
-                onCardDelete={handleCardDelete}
-                onCardLike={handleCardLike}
-                onCreateModal={() => setActiveModal("create")}
-                onSignOut={handleSignOut}
-                handleCloseModal={() => setActiveModal("edit-profile")}
-                isLoggedIn={isLoggedIn}
-              />
-            </Route>
-          </Switch>
-          <Footer />
-          {isLoading && <LoadingIndicator />}
-          {activeModal === "create" && (
-            <AddItemModal
-              handleCloseModal={closeActiveModal}
-              isOpen={activeModal === "create"}
-              onAddItem={addItem}
-            />
-          )}
-          {activeModal === "preview" && selectedCard && (
-            <ItemModal
-              selectedCard={selectedCard}
-              onClose={closeActiveModal}
-              handleCardDelete={handleCardDelete}
-              onClick={handleCardDelete}
-            />
-          )}
-          {activeModal === "edit-profile" && (
-            <EditProfileModal
-              handleCloseModal={closeActiveModal}
-              isOpen={activeModal === "edit-profile"}
-              onProfileEdit={handleProfileEdit}
-            />
-          )}
-          {activeModal === "register" && (
-            <RegisterModal
-              handleCloseModal={closeActiveModal}
-              isOpen
-              onRegister={handleRegister}
-              onSwitchToLogin={() => setActiveModal("log-in")}
-            />
-          )}
-          {activeModal === "log-in" && (
-            <LoginModal
-              handleCloseModal={closeActiveModal}
-              isOpen
-              onLogin={handleLogin}
-              onSwitchToRegister={() => setActiveModal("register")}
-            />
-          )}
-        </CurrentTemperatureUnitContext.Provider>
-      </CurrengtUserContext.Provider>
-    </div>
+        )}
+        {activeModal === "preview" && selectedCard && (
+          <ItemModal
+            selectedCard={selectedCard}
+            onClose={closeActiveModal}
+            handleCardDelete={handleCardDelete}
+            onClick={handleCardDelete}
+          />
+        )}
+        {activeModal === "edit-profile" && (
+          <EditProfileModal
+            handleCloseModal={closeActiveModal}
+            isOpen={activeModal === "edit-profile"}
+            onProfileEdit={handleProfileEdit}
+          />
+        )}
+        {activeModal === "register" && (
+          <RegisterModal
+            handleCloseModal={closeActiveModal}
+            isOpen
+            onRegister={handleRegister}
+            onSwitchToLogin={() => setActiveModal("log-in")}
+          />
+        )}
+        {activeModal === "log-in" && (
+          <LoginModal
+            handleCloseModal={closeActiveModal}
+            isOpen
+            onLogin={handleLogin}
+            onSwitchToRegister={() => setActiveModal("register")}
+          />
+        )}
+      </CurrentTemperatureUnitContext.Provider>
+    </CurrengtUserContext.Provider>
   );
 }
 

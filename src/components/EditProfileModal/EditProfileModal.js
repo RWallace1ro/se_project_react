@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
-import api from "../../utils/api";
 import "./EditProfileModal.css";
 
 const EditProfileModal = ({ handleCloseModal, isOpen, onProfileEdit }) => {
@@ -25,17 +24,13 @@ const EditProfileModal = ({ handleCloseModal, isOpen, onProfileEdit }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setError();
-    const token = localStorage.getItem("jwt");
-    api
-      .updateUser({ name, avatar }, token)
-      .then((updatedUser) => {
+    setError("");
+    onProfileEdit(name, avatar)
+      .then(() => {
         handleCloseModal();
-        onProfileEdit(updatedUser);
       })
-      .catch((err) => {
-        console.log(err);
-        setError("Failed to update profile.  Please try again");
+      .catch((error) => {
+        setError(error.message);
       });
   };
 
