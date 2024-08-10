@@ -23,7 +23,7 @@ function Main({ weatherTemp, onSelectedCard, clothingItems, onCardLike }) {
       if (currentTemperatureUnit === "F")
         if (temp >= 30) {
           return "hot";
-        } else if (temp >= 66 && temp <= 85) {
+        } else if (temp >= 19 && temp <= 29) {
           return "warm";
         } else {
           return "cold";
@@ -36,7 +36,7 @@ function Main({ weatherTemp, onSelectedCard, clothingItems, onCardLike }) {
   }, [currentTemperatureUnit]);
 
   console.log("Temperature Unit:", temperatureUnit);
-  console.log("clothing Items", clothingItems);
+  console.log("Clothing Items:", clothingItems);
 
   const filteredItems = clothingItems.filter((item) => {
     return item.weather.toLowerCase() === weatherType;
@@ -47,7 +47,7 @@ function Main({ weatherTemp, onSelectedCard, clothingItems, onCardLike }) {
       <WeatherCard day={false} type="cloudy-night" weatherTemp={temp} />
       <section className="cards" id="card-section">
         <div className="weather__temp">
-          Today is {temp}&deg; {currentTemperatureUnit} / You may want to wear:
+          Today is {temp}&deg; {temperatureUnit} / You may want to wear:
         </div>
         <div className="cards__items">
           {filteredItems.map((item) => (
