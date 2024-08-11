@@ -15,7 +15,6 @@ const getItemList = () => {
       Authorization: `Bearer ${getToken()}`,
     },
   });
-  // .then(handleServerResponse);
 };
 
 const addItem = ({ name, weather, imageUrl }) => {
@@ -32,7 +31,6 @@ const addItem = ({ name, weather, imageUrl }) => {
       imageUrl,
     }),
   });
-  // .then(handleServerResponse);
 };
 
 const deleteItem = (_id) => {
@@ -43,7 +41,6 @@ const deleteItem = (_id) => {
       Authorization: `Bearer ${getToken()}`,
     },
   });
-  // .then(handleServerResponse);
 };
 
 const addCardLike = (id) => {
@@ -54,7 +51,6 @@ const addCardLike = (id) => {
       Authorization: `Bearer ${getToken()}`,
     },
   });
-  // .then(handleServerResponse);
 };
 
 const removeCardLike = (id) => {
@@ -65,7 +61,6 @@ const removeCardLike = (id) => {
       Authorization: `Bearer ${getToken()}`,
     },
   });
-  // .then(handleServerResponse);
 };
 
 const updateUser = (data, token) => {
@@ -77,7 +72,6 @@ const updateUser = (data, token) => {
     },
     body: JSON.stringify(data),
   });
-  // .then(handleServerResponse);
 };
 
 const api = {

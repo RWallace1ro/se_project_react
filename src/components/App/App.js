@@ -71,7 +71,7 @@ function App() {
   const closeActiveModal = () => setActiveModal("");
 
   const handleSelectedCard = (card) => {
-    closeActiveModal("preview");
+    setActiveModal("preview");
     setSelectedCard(card);
   };
 
