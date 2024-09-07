@@ -1,3 +1,8 @@
+const BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://api.gingerfaith.jumpingcrab.com"
+    : "http://localhost:3001";
+
 export const clothingItems = [
   {
     _id: 0,
@@ -75,3 +80,10 @@ export const weatherOptions = [
   },
   { url: require("../images/night/fog.svg").default, day: false, type: "fog" },
 ];
+
+// const BASE_URL =
+//   process.env.NODE_ENV === "production"
+//     ? "https://api.gingerfaith.jumpingcrab.com"
+//     : "http://localhost:3001";
+
+export { BASE_URL };

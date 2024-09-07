@@ -1,6 +1,6 @@
 import handleServerResponse from "./utils";
 
-const BASE_URL = "http://localhost:3001";
+import { BASE_URL } from "../utils/constants";
 
 const signup = (name, avatar, email, password) => {
   return fetch(`${BASE_URL}/signup`, {
